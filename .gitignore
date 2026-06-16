@@ -4,3 +4,6 @@ __pycache__/
 .idea/
 .vscode/
 node_modules/
+
+# Raw Figma asset dump (176MB) — kept local; curated web images live in assets/img/
+assets/figma/

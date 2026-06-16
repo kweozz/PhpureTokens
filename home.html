@@ -24,6 +24,7 @@
     <a class="home-header__logo" href="#" data-bind="brandName">PHPure</a>
     <nav class="home-header__nav" data-nav></nav>
     <div class="home-header__actions">
+      <a href="index.html" class="btn btn--tertiary" style="padding:8px 16px;font-size:13px" title="Back to the token & component overview">Token overview</a>
       <button class="icon-btn" aria-label="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>
       <button class="icon-btn" aria-label="Account"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></button>
       <button class="icon-btn" aria-label="Cart"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h2l3 13h12l2-9H6"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg></button>
@@ -87,13 +88,16 @@
   <!-- VIDEO HIGHLIGHT -->
   <section class="section container">
     <div class="home-highlight">
-      <div class="home-highlight__media"><img data-img="highlight" alt="" /></div>
+      <div class="home-highlight__media">
+        <img data-img="highlight" alt="" />
+        <button class="home-highlight__play" aria-label="Play"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg></button>
+      </div>
       <div class="home-highlight__body">
         <h2 class="home-highlight__title" data-bind="highlight.title"></h2>
         <p class="home-highlight__sub" data-bind="highlight.sub"></p>
         <div class="home-highlight__stats" data-highlight-stats></div>
         <p class="home-highlight__desc" data-bind="highlight.desc"></p>
-        <div><a href="#" class="btn btn--primary btn--knockout" data-bind="highlight.cta">Explore our collection</a></div>
+        <div><a href="#" class="btn btn--primary" data-bind="highlight.cta">Explore our collection</a></div>
       </div>
     </div>
   </section>
@@ -130,16 +134,52 @@
 
   <!-- FOOTER -->
   <footer class="home-footer">
-    <div class="home-footer__cols">
-      <div class="home-footer__col">
-        <div class="home-footer__brand" data-bind="brandName">PHPure</div>
-        <p class="home-footer__tagline" data-bind="footer.tagline"></p>
+    <div class="home-footer__inner">
+
+      <div class="home-footer__newsletter">
+        <h2 class="home-footer__news-title">Be the first to know.</h2>
+        <p class="home-footer__news-sub">Subscribe for our best offers.</p>
+        <form class="home-footer__news-form" onsubmit="event.preventDefault()">
+          <input class="input" type="email" placeholder="Enter your email address" />
+          <button class="btn btn--secondary">Subscribe</button>
+        </form>
       </div>
-      <div class="home-footer__col"><h4>Customer service</h4><ul><li><a href="#">Orders</a></li><li><a href="#">Returns</a></li><li><a href="#">My account</a></li><li><a href="#">Payments</a></li><li><a href="#">Contact</a></li></ul></div>
-      <div class="home-footer__col"><h4>Our company</h4><ul><li><a href="#">About us</a></li><li><a href="#">Blog</a></li><li><a href="#">Our stores</a></li><li><a href="#">Sustainability</a></li></ul></div>
-      <div class="home-footer__col"><h4>My account</h4><ul><li><a href="#">My account</a></li><li><a href="#">My orders</a></li><li><a href="#">Wishlist</a></li></ul></div>
+
+      <div class="home-footer__cols">
+        <div class="home-footer__col">
+          <h4>Headquarters</h4>
+          <p>Av. Louise 12</p>
+          <p>1050 Saint-Gilles</p>
+          <p>+32 (0)2 129 12 33</p>
+          <p data-bind="footer.email">info@phpuregolf.com</p>
+        </div>
+        <div class="home-footer__col"><h4>Customer Service</h4><ul><li><a href="#">Orders</a></li><li><a href="#">Returns</a></li><li><a href="#">My account</a></li><li><a href="#">General information</a></li><li><a href="#">Gift cards</a></li><li><a href="#">Payments</a></li><li><a href="#">Contact</a></li></ul></div>
+        <div class="home-footer__col"><h4>Our Company</h4><ul><li><a href="#">About us</a></li><li><a href="#">Blog</a></li><li><a href="#">Our stores</a></li><li><a href="#">Sustainability</a></li></ul></div>
+        <div class="home-footer__col">
+          <h4>My Account</h4>
+          <ul><li><a href="#">My account</a></li><li><a href="#">My orders</a></li></ul>
+          <div class="home-footer__social">
+            <a href="#" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2 0-3 1-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14V9z"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8A1.5 1.5 0 1 0 6.5 5 1.5 1.5 0 0 0 6.5 8zM5 10h3v9H5zM10 10h3v1.3c.5-.8 1.5-1.5 3-1.5 2.3 0 3 1.5 3 4V19h-3v-4c0-1-.4-1.7-1.4-1.7S13 14 13 15v4h-3z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="home-footer__payments">
+        <span class="home-footer__pay">iDEAL</span>
+        <span class="home-footer__pay">VISA</span>
+        <span class="home-footer__pay">MC</span>
+        <span class="home-footer__pay">PayPal</span>
+        <span class="home-footer__pay">Klarna</span>
+        <span class="home-footer__pay">Pay</span>
+        <span class="home-footer__pay">GPay</span>
+        <span class="home-footer__pay">bcmc</span>
+        <span class="home-footer__pay">DHL</span>
+      </div>
+
+      <div class="home-footer__legal"><span data-bind="footer.copyright">© 2025 PHPure</span><span>Terms &amp; Conditions · Privacy Policy</span></div>
     </div>
-    <div class="home-footer__legal"><span data-bind="footer.copyright">© 2025 PHPure</span><span>Terms &amp; conditions · Privacy policy</span></div>
   </footer>
 
   <script>
@@ -208,48 +248,49 @@
       },
       imageCta: { title: 'PHPure Golf', desc: 'We bring you premium gear and apparel for golfers who value precision and performance. Since 1984.', cta: 'Learn more' },
       imageCta_img: img('1592919505780-303950717480', 1600),
-      footer: { tagline: 'Premium gear and apparel for golfers who value precision and performance.', copyright: '© 2025 PHPure Golf' },
+      footer: { tagline: 'Premium gear and apparel for golfers who value precision and performance.', copyright: '© 2025 PHPure Golf', email: 'info@phpuregolf.com' },
     },
 
     'mini-golf': {
       brandName: 'Mini Golf',
       nav: ['New arrivals', 'Girls', 'Boys', 'Baby', 'Accessories', 'Sale'],
       hero: { title: 'LITTLE LOOKS, BIG ADVENTURES', cta: 'Discover our new products' },
-      heroLeft: img('1503454537195-1dcabb73ffb9', 1200),
-      heroRight: img('1471286174890-9c112ffca5b4', 1200),
+      heroLeft: 'assets/img/mg-hero-1.jpg',
+      heroRight: 'assets/img/mg-hero-2.jpg',
       bestsellers: { title: 'THE PIECES EVERYONE LOVES', cta: 'Discover all our products' },
       products: [
-        { brand: 'Mini Golf', name: 'Sunshine Cardigan', price: '€56,99', tag: 'New', img: img('1518831959646-742c3a14ebf7', 600) },
-        { brand: 'Mini Golf', name: 'Sunshine Cardigan', price: '€56,99', tag: 'New', img: img('1490725263030-1f0521cec8ec', 600) },
-        { brand: 'Mini Golf', name: 'Sunshine Cardigan', price: '€56,99', tag: 'New', img: img('1555009393-f20bdb245c4d', 600) },
-        { brand: 'Mini Golf', name: 'Sunshine Cardigan', price: '€56,99', tag: 'New', img: img('1503454537195-1dcabb73ffb9', 600) },
+        { brand: 'Mini Golf', name: 'Striped Shirt', price: '€56,99', tag: 'New', img: 'assets/img/mg-prod-1.jpg' },
+        { brand: 'Mini Golf', name: 'Printed Shorts', price: '€56,99', tag: 'New', img: 'assets/img/mg-prod-2.jpg' },
+        { brand: 'Mini Golf', name: 'Sailor Polo', price: '€56,99', tag: 'New', img: 'assets/img/mg-prod-3.jpg' },
+        { brand: 'Mini Golf', name: 'Sunshine Socks', price: '€56,99', tag: 'New', img: 'assets/img/mg-prod-4.jpg' },
       ],
       categories: {
         title: 'SHOP BY CATEGORY',
         items: [
-          { label: 'Girls', img: img('1518831959646-742c3a14ebf7', 900) },
-          { label: 'Boys', img: img('1471286174890-9c112ffca5b4', 900) },
-          { label: 'Baby', img: img('1490725263030-1f0521cec8ec', 900) },
-          { label: 'Accessories', img: img('1555009393-f20bdb245c4d', 900) },
+          { label: 'Girls', img: 'assets/img/mg-cat-1.jpg' },
+          { label: 'Boys', img: 'assets/img/mg-cat-2.jpg' },
+          { label: 'Baby', img: 'assets/img/mg-cat-3.jpg' },
+          { label: 'Accessories', img: 'assets/img/mg-cat-4.jpg' },
         ],
       },
       newsletter: { title: 'JOIN THE MINI CLUB', desc: 'Be the first to discover new drops, playful collections and little surprises.', fineprint: 'When you sign up for our emails you will receive marketing and learn more about us in our privacy policy.' },
-      newsletter_img: img('1471286174890-9c112ffca5b4', 1200),
+      newsletter_img: 'assets/img/mg-cta.jpg',
       testimonial: { quote: 'Mini Golf creates soft, easy-to-wear pieces for babies and kids. Designed for movement, comfort and everyday adventures, with gentle colours and playful details.', cite: 'Laura Peterson · Awesome Company' },
-      testimonialAvatar: img('1544005313-94ddf0286df2', 200),
+      testimonialAvatar: 'assets/img/mg-avatar.jpg',
       highlight: {
         title: 'IM NOT GOING OUT CLUB', sub: 'Cozy styles for indoor adventures.',
         desc: "Loungewear designed for little ones who'd rather stay in. Soft cottons, playful prints, made for slow mornings and pillow forts.",
         cta: 'Explore our collection',
         stats: [ { v: '100%', l: 'Organic cotton' }, { v: 'GOTS', l: 'Certified' }, { v: 'Made', l: 'In Europe' } ],
       },
-      highlight_img: img('1503454537195-1dcabb73ffb9', 1000),
+      highlight_img: 'assets/img/mg-highlight.jpg',
       stories: {
         title: 'TINY TALES', cta: 'Read more',
         items: [
-          { tag: 'Lookbook', title: 'Little outfits for sunny days.', img: img('1518831959646-742c3a14ebf7', 800) },
-          { tag: 'Tips', title: 'Choose the right size for growing kids.', img: img('1490725263030-1f0521cec8ec', 700) },
-          { tag: 'Behind the scenes', title: 'Behind our SS26 collection.', img: img('1471286174890-9c112ffca5b4', 700) },
+          { tag: 'Lookbook', title: 'Little outfits for sunny days.', img: 'assets/img/mg-story-feature.jpg' },
+          { tag: 'Tips', title: 'Choose the right size for growing kids.', img: 'assets/img/mg-story-2.jpg' },
+          { tag: 'Behind the scenes', title: 'Behind our SS26 collection.', img: 'assets/img/mg-story-3.jpg' },
+          { tag: 'Lookbook', title: 'Five outfits for picnic days.', img: 'assets/img/mg-story-4.jpg' },
         ],
       },
       reviews: {
@@ -261,7 +302,7 @@
       },
       imageCta: { title: 'MINI GOLF', desc: 'Playful clothing for little explorers. Mini Golf creates soft, easy-to-wear pieces for babies and kids.', cta: 'Learn more' },
       imageCta_img: img('1471286174890-9c112ffca5b4', 1600),
-      footer: { tagline: 'Premium kids gear made for tiny adventures.', copyright: '© 2026 Mini Golf' },
+      footer: { tagline: 'Premium kids gear made for tiny adventures.', copyright: '© 2026 Mini Golf', email: 'hello@minigolf.com' },
     },
   };
 
