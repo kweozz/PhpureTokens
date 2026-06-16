@@ -65,7 +65,7 @@
         "borderRadius": {
           "default": {
             "$type": "borderRadius",
-            "$value": "{semantic.borderRadius.sm}"
+            "$value": "{core.borderRadius.8}"
           }
         }
       },

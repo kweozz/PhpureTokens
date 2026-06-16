@@ -353,18 +353,18 @@
 /* ============ Hero (single image w/ centered overlay) ============ */
 .hero {
   position: relative;
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   min-height: 560px;
   display: grid;
   place-items: center;
   text-align: center;
   background: var(--color-background-muted);
-  margin: 24px;
+  margin: 0;
 }
 .hero__media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.hero__media--split { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 16px; }
-.hero__media--split img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg); display: block; }
+.hero__media--split { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 0; }
+.hero__media--split img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .hero__overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.45) 100%); }
 .hero__content {
   position: relative;

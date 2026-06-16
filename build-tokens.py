@@ -26,6 +26,20 @@ FONT_WEIGHT_MAP = {
     "Bold": "700",
 }
 
+# Google-Fonts fallback chains for proprietary brand fonts so the brand identity
+# is still visible even if the original .otf files are not licensed/loaded.
+FONT_FALLBACK = {
+    "Dejanire Headline": '"Dejanire Headline", "DM Serif Display", "Cormorant Garamond", serif',
+    "ITC Avant Garde Gothic Pro": '"ITC Avant Garde Gothic Pro", "Jost", "Inter", system-ui, sans-serif',
+    "Grenadine MVB": '"Grenadine MVB", "Fredoka", "Quicksand", system-ui, sans-serif',
+    "DM Sans": '"DM Sans", system-ui, sans-serif',
+    "Inter": '"Inter", system-ui, sans-serif',
+}
+
+
+def font_stack(name):
+    return FONT_FALLBACK.get(name, f'"{name}", system-ui, sans-serif')
+
 
 def load(p):
     with open(p) as f:
@@ -138,7 +152,7 @@ def collect_vars(ctx):
     for k, v in flat_leaves(ctx.get("semantic", {}).get("shadow", {})):
         out.append((f"--shadow-{k}", shadow_to_css(v)))
     for k, v in flat_leaves(ctx.get("semantic", {}).get("fontFamily", {})):
-        out.append((f"--font-family-{k}", f'"{v}", system-ui, sans-serif'))
+        out.append((f"--font-family-{k}", font_stack(v)))
     for k, v in flat_leaves(ctx.get("semantic", {}).get("fontWeight", {})):
         out.append((f"--font-weight-{k}", FONT_WEIGHT_MAP.get(v, v)))
 
@@ -152,7 +166,7 @@ def collect_vars(ctx):
             if prop in v:
                 val = v[prop]
                 if prop == "fontFamily":
-                    val = f'"{val}", system-ui, sans-serif'
+                    val = font_stack(val)
                 elif prop == "fontWeight":
                     val = FONT_WEIGHT_MAP.get(val, val)
                 out.append((f"--typography-{name}-{kebab(prop)}", val))
