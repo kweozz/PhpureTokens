@@ -1,0 +1,28 @@
+[
+  {
+    "id": "golf-lg",
+    "name": "Golf · Desktop",
+    "group": "brand",
+    "selectedTokenSets": {
+      "core": "source",
+      "brand/golf": "enabled",
+      "viewport/large": "enabled",
+      "semantic/golf": "enabled",
+      "component/golf": "enabled"
+    },
+    "$figmaVariableReferences": {}
+  },
+  {
+    "id": "minigolf-lg",
+    "name": "Mini Golf · Desktop",
+    "group": "brand",
+    "selectedTokenSets": {
+      "core": "source",
+      "brand/mini-golf": "enabled",
+      "viewport/large": "enabled",
+      "semantic/mini-golf": "enabled",
+      "component/mini-golf": "enabled"
+    },
+    "$figmaVariableReferences": {}
+  }
+]

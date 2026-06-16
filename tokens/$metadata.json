@@ -1,0 +1,13 @@
+{
+  "tokenSetOrder": [
+    "core",
+    "brand/golf",
+    "brand/mini-golf",
+    "semantic/golf",
+    "semantic/mini-golf",
+    "component/golf",
+    "component/mini-golf",
+    "viewport/large",
+    "viewport/small"
+  ]
+}

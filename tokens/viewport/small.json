@@ -1,0 +1,70 @@
+{
+  "viewport": {
+    "fontSize": {
+      "display": {
+        "$type": "fontSizes",
+        "$value": "{core.fontSize.48}"
+      },
+      "headline-lg": {
+        "$type": "fontSizes",
+        "$value": "{core.fontSize.40}"
+      },
+      "headline": {
+        "$type": "fontSizes",
+        "$value": "{core.fontSize.36}"
+      },
+      "headline-sm": {
+        "$type": "fontSizes",
+        "$value": "{core.fontSize.24}"
+      },
+      "title-lg": {
+        "$type": "fontSizes",
+        "$value": "{core.fontSize.24}"
+      },
+      "title": {
+        "$type": "fontSizes",
+        "$value": "{core.fontSize.18}"
+      },
+      "title-sm": {
+        "$type": "fontSizes",
+        "$value": "{core.fontSize.18}"
+      },
+      "body-lg": {
+        "$type": "fontSizes",
+        "$value": "{core.fontSize.20}"
+      },
+      "body": {
+        "$type": "fontSizes",
+        "$value": "{core.fontSize.16}"
+      },
+      "body-sm": {
+        "$type": "fontSizes",
+        "$value": "{core.fontSize.14}"
+      },
+      "label-lg": {
+        "$type": "fontSizes",
+        "$value": "{core.fontSize.18}"
+      },
+      "label": {
+        "$type": "fontSizes",
+        "$value": "{core.fontSize.16}"
+      },
+      "label-sm": {
+        "$type": "fontSizes",
+        "$value": "{core.fontSize.14}"
+      },
+      "meta": {
+        "$type": "fontSizes",
+        "$value": "{core.fontSize.14}"
+      },
+      "meta-sm": {
+        "$type": "fontSizes",
+        "$value": "{core.fontSize.12}"
+      },
+      "logo": {
+        "$type": "fontSizes",
+        "$value": "{core.fontSize.30}"
+      }
+    }
+  }
+}

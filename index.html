@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PHPure · Components</title>
+  <meta name="description" content="A shadcn-style overview of PHPure's design-system components, bound to the multi-brand token set (golf + mini-golf)." />
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="site.css" />
+  <link rel="stylesheet" href="components.css" />
+</head>
+<body data-brand="golf">
+
+<header class="topbar">
+  <a class="topbar__logo" href="#top">PHPure</a>
+  <nav class="topbar__nav">
+    <a href="#foundations">Foundations</a>
+    <a href="#components">Components</a>
+    <a href="#blocks">Blocks</a>
+  </nav>
+  <span class="topbar__spacer"></span>
+  <div class="toggle-group" role="group" aria-label="Brand">
+    <button data-brand-toggle="golf" aria-pressed="true">Golf</button>
+    <button data-brand-toggle="mini-golf" aria-pressed="false">Mini-golf</button>
+  </div>
+  <div class="toggle-group" role="group" aria-label="Viewport">
+    <button data-viewport-toggle="sm" aria-pressed="false">Mobile</button>
+    <button data-viewport-toggle="md" aria-pressed="false">Tablet</button>
+    <button data-viewport-toggle="lg" aria-pressed="true">Desktop</button>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="sidebar" id="top">
+    <h3>Getting started</h3>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#tokens">Token architecture</a></li>
+    </ul>
+    <h3>Foundations</h3>
+    <ul>
+      <li><a href="#colors">Colors</a></li>
+      <li><a href="#typography">Typography</a></li>
+      <li><a href="#spacing">Spacing</a></li>
+      <li><a href="#radius">Radius</a></li>
+      <li><a href="#shadow">Shadow</a></li>
+    </ul>
+    <h3>Components</h3>
+    <ul>
+      <li><a href="#button">Button</a></li>
+      <li><a href="#link">Link</a></li>
+      <li><a href="#form">Form</a></li>
+      <li><a href="#tag">Tag / Swatch</a></li>
+      <li><a href="#card">Card</a></li>
+      <li><a href="#product-card">Product card</a></li>
+      <li><a href="#category-card">Category card</a></li>
+    </ul>
+    <h3>Blocks</h3>
+    <ul>
+      <li><a href="#header-block">Header</a></li>
+      <li><a href="#hero">Hero</a></li>
+      <li><a href="#cta-banner">CTA banner</a></li>
+      <li><a href="#image-cta">Image CTA</a></li>
+      <li><a href="#testimonial">Testimonial</a></li>
+      <li><a href="#review">Review card</a></li>
+      <li><a href="#usps">USPs strip</a></li>
+      <li><a href="#story">Story card</a></li>
+      <li><a href="#highlight">Video highlight</a></li>
+      <li><a href="#footer-block">Footer</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <!-- INTRO -->
+    <section class="doc" id="intro">
+      <div class="doc__header">
+        <div class="doc__eyebrow">PHPure Design System</div>
+        <h1 class="doc__title">Components for Hyvä · Tailwind v4</h1>
+        <p class="doc__desc">A reusable, multi-brand component library bound to the PHPure design tokens. Every visual value comes from the token set — switch <code>data-brand</code> on any parent to see the same component re-skin live. Use the toggles in the top bar to preview <strong>golf</strong> ↔ <strong>mini-golf</strong> and to constrain a section to a mobile or tablet viewport.</p>
+      </div>
+    </section>
+
+    <!-- TOKEN ARCHITECTURE -->
+    <section class="doc" id="tokens">
+      <div class="doc__header">
+        <div class="doc__eyebrow">Foundations</div>
+        <h2 class="doc__title">Token architecture</h2>
+        <p class="doc__desc">Four layers: <code>core</code> primitives → <code>brand/&lt;name&gt;</code> brand identity → <code>semantic/&lt;name&gt;</code> meaning layer → <code>component/&lt;name&gt;</code> component tokens. Components only bind to <code>component/*</code> or <code>semantic/*</code> — never to <code>core</code> or <code>brand</code> directly. Brand switching happens via <code>data-brand</code> overriding the same variable names with different values.</p>
+      </div>
+    </section>
+
+    <!-- COLORS -->
+    <section class="doc" id="colors">
+      <div class="doc__header">
+        <div class="doc__eyebrow">Foundations</div>
+        <h2 class="doc__title">Colors</h2>
+        <p class="doc__desc">Semantic background, text, and border tokens. Bound to <code>--color-*</code> CSS custom properties and updated automatically when the brand changes.</p>
+      </div>
+      <div class="preview">
+        <div class="swatch-grid" id="color-swatches">
+          <!-- populated by script -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TYPOGRAPHY -->
+    <section class="doc" id="typography">
+      <div class="doc__header">
+        <div class="doc__eyebrow">Foundations</div>
+        <h2 class="doc__title">Typography</h2>
+        <p class="doc__desc">Composite typography styles — apply as a single class. Font-size drops automatically below the <code>md</code> breakpoint (960px).</p>
+      </div>
+      <div class="preview">
+        <div class="type-stack">
+          <div class="type-stack__row"><span class="type-stack__label">.text-display</span><span class="text-display">Display</span></div>
+          <div class="type-stack__row"><span class="type-stack__label">.text-headline-lg</span><span class="text-headline-lg">Headline LG</span></div>
+          <div class="type-stack__row"><span class="type-stack__label">.text-headline</span><span class="text-headline">Headline</span></div>
+          <div class="type-stack__row"><span class="type-stack__label">.text-headline-sm</span><span class="text-headline-sm">Headline SM</span></div>
+          <div class="type-stack__row"><span class="type-stack__label">.text-title-lg</span><span class="text-title-lg">Title LG</span></div>
+          <div class="type-stack__row"><span class="type-stack__label">.text-title</span><span class="text-title">Title</span></div>
+          <div class="type-stack__row"><span class="type-stack__label">.text-title-sm</span><span class="text-title-sm">Title SM</span></div>
+          <div class="type-stack__row"><span class="type-stack__label">.text-body-lg</span><span class="text-body-lg">Body LG — the quick brown fox jumps over the lazy dog.</span></div>
+          <div class="type-stack__row"><span class="type-stack__label">.text-body</span><span class="text-body">Body — the quick brown fox jumps over the lazy dog.</span></div>
+          <div class="type-stack__row"><span class="type-stack__label">.text-body-sm</span><span class="text-body-sm">Body SM — the quick brown fox jumps over the lazy dog.</span></div>
+          <div class="type-stack__row"><span class="type-stack__label">.text-label-lg</span><span class="text-label-lg">Label LG</span></div>
+          <div class="type-stack__row"><span class="type-stack__label">.text-label</span><span class="text-label">Label</span></div>
+          <div class="type-stack__row"><span class="type-stack__label">.text-label-sm</span><span class="text-label-sm">Label SM</span></div>
+          <div class="type-stack__row"><span class="type-stack__label">.text-logo</span><span class="text-logo">PHPure</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPACING -->
+    <section class="doc" id="spacing">
+      <div class="doc__header">
+        <div class="doc__eyebrow">Foundations</div>
+        <h2 class="doc__title">Spacing</h2>
+        <p class="doc__desc">Semantic spacing scale — <code>--spacing-2xs</code> through <code>--spacing-3xl</code>.</p>
+      </div>
+      <div class="preview">
+        <div style="display:flex; flex-direction:column; gap:8px; width:100%;">
+          <div style="display:flex; align-items:center; gap:16px;"><span class="type-stack__label" style="width:80px">2xs · 4</span><span style="height:16px; background: var(--color-background-brand-knockout); width: var(--spacing-2xs);"></span></div>
+          <div style="display:flex; align-items:center; gap:16px;"><span class="type-stack__label" style="width:80px">xs · 8</span><span style="height:16px; background: var(--color-background-brand-knockout); width: var(--spacing-xs);"></span></div>
+          <div style="display:flex; align-items:center; gap:16px;"><span class="type-stack__label" style="width:80px">sm · 12</span><span style="height:16px; background: var(--color-background-brand-knockout); width: var(--spacing-sm);"></span></div>
+          <div style="display:flex; align-items:center; gap:16px;"><span class="type-stack__label" style="width:80px">md · 16</span><span style="height:16px; background: var(--color-background-brand-knockout); width: var(--spacing-md);"></span></div>
+          <div style="display:flex; align-items:center; gap:16px;"><span class="type-stack__label" style="width:80px">lg · 24</span><span style="height:16px; background: var(--color-background-brand-knockout); width: var(--spacing-lg);"></span></div>
+          <div style="display:flex; align-items:center; gap:16px;"><span class="type-stack__label" style="width:80px">xl · 32</span><span style="height:16px; background: var(--color-background-brand-knockout); width: var(--spacing-xl);"></span></div>
+          <div style="display:flex; align-items:center; gap:16px;"><span class="type-stack__label" style="width:80px">2xl · 48</span><span style="height:16px; background: var(--color-background-brand-knockout); width: var(--spacing-2xl);"></span></div>
+          <div style="display:flex; align-items:center; gap:16px;"><span class="type-stack__label" style="width:80px">3xl · 64</span><span style="height:16px; background: var(--color-background-brand-knockout); width: var(--spacing-3xl);"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RADIUS -->
+    <section class="doc" id="radius">
+      <div class="doc__header">
+        <div class="doc__eyebrow">Foundations</div>
+        <h2 class="doc__title">Radius</h2>
+        <p class="doc__desc">Semantic radius scale. Notice how the same tokens produce visibly different shapes under each brand — Mini-golf has tighter radii than Golf.</p>
+      </div>
+      <div class="preview">
+        <div style="display:flex; gap:24px; flex-wrap:wrap;">
+          <div style="text-align:center; font-size:12px; color: var(--color-text-subtle)"><div style="width:96px; height:96px; background: var(--color-background-brand-strong); border-radius: var(--radius-sm); margin-bottom:8px"></div>sm</div>
+          <div style="text-align:center; font-size:12px; color: var(--color-text-subtle)"><div style="width:96px; height:96px; background: var(--color-background-brand-strong); border-radius: var(--radius-md); margin-bottom:8px"></div>md</div>
+          <div style="text-align:center; font-size:12px; color: var(--color-text-subtle)"><div style="width:96px; height:96px; background: var(--color-background-brand-strong); border-radius: var(--radius-lg); margin-bottom:8px"></div>lg</div>
+          <div style="text-align:center; font-size:12px; color: var(--color-text-subtle)"><div style="width:96px; height:96px; background: var(--color-background-brand-strong); border-radius: var(--radius-xl); margin-bottom:8px"></div>xl</div>
+          <div style="text-align:center; font-size:12px; color: var(--color-text-subtle)"><div style="width:96px; height:96px; background: var(--color-background-brand-strong); border-radius: var(--radius-pill); margin-bottom:8px"></div>pill</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHADOW -->
+    <section class="doc" id="shadow">
+      <div class="doc__header">
+        <div class="doc__eyebrow">Foundations</div>
+        <h2 class="doc__title">Shadow</h2>
+        <p class="doc__desc">Semantic <code>--shadow-default</code> from the token set.</p>
+      </div>
+      <div class="preview">
+        <div style="width:200px; height:120px; background: var(--color-background-default); border-radius: var(--radius-lg); box-shadow: var(--shadow-default); display:grid; place-items:center; font-size: 13px; color: var(--color-text-subtle);">--shadow-default</div>
+      </div>
+    </section>
+
+    <!-- ========== COMPONENTS ========== -->
+    <h2 id="components" style="font-family: var(--font-family-heading); font-size: 28px; font-weight: 500; margin: 24px 0 16px; padding-top: 24px; border-top: 1px solid var(--color-border-default);">Components</h2>
+
+    <!-- BUTTON -->
+    <section class="doc" id="button">
+      <div class="doc__header">
+        <div class="doc__eyebrow">Component</div>
+        <h2 class="doc__title">Button</h2>
+        <p class="doc__desc">Three variants — primary, secondary, tertiary — each with default, hover, active, disabled, and focus states. Bound to <code>--button-{variant}-{slot}-{state}</code>.</p>
+      </div>
+      <div class="preview">
+        <button class="btn btn--primary">Shop now</button>
+        <button class="btn btn--secondary">View bestsellers</button>
+        <button class="btn btn--tertiary">Learn more</button>
+        <button class="btn btn--primary" disabled>Disabled</button>
+      </div>
+      <div class="code"><button class="code__copy" data-copy>Copy</button><pre>&lt;button class="btn btn--primary"&gt;Shop now&lt;/button&gt;
+&lt;button class="btn btn--secondary"&gt;View bestsellers&lt;/button&gt;
+&lt;button class="btn btn--tertiary"&gt;Learn more&lt;/button&gt;
+&lt;button class="btn btn--primary" disabled&gt;Disabled&lt;/button&gt;</pre></div>
+    </section>
+
+    <!-- LINK -->
+    <section class="doc" id="link">
+      <div class="doc__header">
+        <div class="doc__eyebrow">Component</div>
+        <h2 class="doc__title">Link</h2>
+        <p class="doc__desc">Standard text links and knockout links for dark backgrounds.</p>
+      </div>
+      <div class="preview" style="flex-direction: column; align-items: flex-start;">
+        <p style="margin:0">Inline links use <a href="#" class="link">the primary brand color</a> and follow underline-on-default with hover and visited states.</p>
+        <div style="background: var(--color-background-brand-knockout); padding: 24px; border-radius: var(--radius-md); width: 100%; color: var(--color-text-knockout);">
+          On a dark surface, use <a href="#" class="link link--knockout">the knockout link variant</a> instead.
+        </div>
+      </div>
+      <div class="code"><button class="code__copy" data-copy>Copy</button><pre>&lt;a href="#" class="link"&gt;Standard link&lt;/a&gt;
+&lt;a href="#" class="link link--knockout"&gt;Knockout link&lt;/a&gt;</pre></div>
+    </section>
+
+    <!-- FORM -->
+    <section class="doc" id="form">
+      <div class="doc__header">
+        <div class="doc__eyebrow">Component</div>
+        <h2 class="doc__title">Form</h2>
+        <p class="doc__desc">Text input, textarea, select, checkbox. Bound to <code>--form-*</code> with focus ring on <code>--form-border-focus</code>.</p>
+      </div>
+      <div class="preview" style="flex-direction:column; align-items:flex-start; gap:20px;">
+        <label class="field"><span class="field__label">Email address</span><input class="input" type="email" placeholder="you@example.com" /><span class="field__hint">We'll never share your email.</span></label>
+        <label class="field"><span class="field__label">Message</span><textarea class="textarea" placeholder="Tell us about your golf setup…"></textarea></label>
+        <label class="field"><span class="field__label">Handedness</span>
+          <select class="select"><option>Right-handed</option><option>Left-handed</option></select>
+        </label>
+        <label class="field"><span class="field__label">Disabled</span><input class="input" disabled value="Read-only" /></label>
+        <label class="checkbox"><input type="checkbox" checked />Subscribe to the inner circle newsletter</label>
+      </div>
+      <div class="code"><button class="code__copy" data-copy>Copy</button><pre>&lt;label class="field"&gt;
+  &lt;span class="field__label"&gt;Email address&lt;/span&gt;
+  &lt;input class="input" type="email" placeholder="you@example.com" /&gt;
+  &lt;span class="field__hint"&gt;We'll never share your email.&lt;/span&gt;
+&lt;/label&gt;</pre></div>
+    </section>
+
+    <!-- TAG -->
+    <section class="doc" id="tag">
+      <div class="doc__header">
+        <div class="doc__eyebrow">Component</div>
+        <h2 class="doc__title">Tag / Swatch</h2>
+        <p class="doc__desc">Small pill labels for category, status, and badge use. Three surface variants.</p>
+      </div>
+      <div class="preview">
+        <span class="tag">New arrival</span>
+        <span class="tag tag--strong">Limited</span>
+        <span class="tag tag--knockout">Members</span>
+      </div>
+      <div class="code"><button class="code__copy" data-copy>Copy</button><pre>&lt;span class="tag"&gt;New arrival&lt;/span&gt;
+&lt;span class="tag tag--strong"&gt;Limited&lt;/span&gt;
+&lt;span class="tag tag--knockout"&gt;Members&lt;/span&gt;</pre></div>
+    </section>
+
+    <!-- CARD -->
+    <section class="doc" id="card">
+      <div class="doc__header">
+        <div class="doc__eyebrow">Component</div>
+        <h2 class="doc__title">Card</h2>
+        <p class="doc__desc">Base card with media, body, optional title and footer.</p>
+      </div>
+      <div class="preview">
+        <article class="card" style="max-width: 320px;">
+          <img class="card__media" src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=600&q=60" alt="" />
+          <div class="card__body">
+            <h3 class="card__title">Sunrise rounds</h3>
+            <p style="margin:0; color: var(--color-text-subtle);">A quick read on the calm of the first tee at 6am.</p>
+            <a href="#" class="link" style="margin-top: 8px;">Read story</a>
+          </div>
+        </article>
+      </div>
+      <div class="code"><button class="code__copy" data-copy>Copy</button><pre>&lt;article class="card"&gt;
+  &lt;img class="card__media" src="…" alt="" /&gt;
+  &lt;div class="card__body"&gt;
+    &lt;h3 class="card__title"&gt;Sunrise rounds&lt;/h3&gt;
+    &lt;p&gt;A quick read on the calm of the first tee at 6am.&lt;/p&gt;
+    &lt;a class="link" href="#"&gt;Read story&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</pre></div>
+    </section>
+
+    <!-- PRODUCT CARD -->
+    <section class="doc" id="product-card">
+      <div class="doc__header">
+        <div class="doc__eyebrow">Component</div>
+        <h2 class="doc__title">Product card</h2>
+        <p class="doc__desc">PLP item with image, optional tag, title, subtitle, and price. Used on the bestsellers row.</p>
+      </div>
+      <div class="preview">
+        <article class="card product-card" style="max-width: 240px;">
+          <span class="tag">New</span>
+          <img class="card__media" src="https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?auto=format&fit=crop&w=400&q=60" alt="" />
+          <div class="card__body">
+            <h3 class="card__title text-title-sm" style="font-size: var(--font-size-title-sm)">Putter 01</h3>
+            <p class="product-card__sub">Tour-weight, matte</p>
+            <div class="product-card__footer">
+              <span class="card__price">€249</span>
+              <button class="btn btn--tertiary" style="padding: 6px 12px; font-size: 13px;">Add</button>
+            </div>
+          </div>
+        </article>
+        <article class="card product-card" style="max-width: 240px;">
+          <span class="tag tag--strong">Limited</span>
+          <img class="card__media" src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=400&q=60" alt="" />
+          <div class="card__body">
+            <h3 class="card__title text-title-sm" style="font-size: var(--font-size-title-sm)">Polo · Heather</h3>
+            <p class="product-card__sub">Pima cotton, slim fit</p>
+            <div class="product-card__footer">
+              <span class="card__price">€89</span>
+              <button class="btn btn--tertiary" style="padding: 6px 12px; font-size: 13px;">Add</button>
+            </div>
+          </div>
+        </article>
+        <article class="card product-card" style="max-width: 240px;">
+          <img class="card__media" src="https://images.unsplash.com/photo-1611374243371-1e95da0f8d92?auto=format&fit=crop&w=400&q=60" alt="" />
+          <div class="card__body">
+            <h3 class="card__title text-title-sm" style="font-size: var(--font-size-title-sm)">Glove · Lambskin</h3>
+            <p class="product-card__sub">Tour-grade leather</p>
+            <div class="product-card__footer">
+              <span class="card__price">€34</span>
+              <button class="btn btn--tertiary" style="padding: 6px 12px; font-size: 13px;">Add</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="code"><button class="code__copy" data-copy>Copy</button><pre>&lt;article class="card product-card"&gt;
+  &lt;span class="tag"&gt;New&lt;/span&gt;
+  &lt;img class="card__media" src="…" alt="" /&gt;
+  &lt;div class="card__body"&gt;
+    &lt;h3 class="card__title"&gt;Putter 01&lt;/h3&gt;
+    &lt;p class="product-card__sub"&gt;Tour-weight, matte&lt;/p&gt;
+    &lt;div class="product-card__footer"&gt;
+      &lt;span class="card__price"&gt;€249&lt;/span&gt;
+      &lt;button class="btn btn--tertiary"&gt;Add&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</pre></div>
+    </section>
+
+    <!-- CATEGORY CARD -->
+    <section class="doc" id="category-card">
+      <div class="doc__header">
+        <div class="doc__eyebrow">Component</div>
+        <h2 class="doc__title">Category card / grid</h2>
+        <p class="doc__desc">Square-ish image tiles with a knockout label, used on the Shop-by-category section.</p>
+      </div>
+      <div class="preview">
+        <div class="category-grid">
+          <a href="#" class="category"><img class="category__img" src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=500&q=60" alt="" /><span class="category__label">Clubs</span></a>
+          <a href="#" class="category"><img class="category__img" src="https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?auto=format&fit=crop&w=500&q=60" alt="" /><span class="category__label">Apparel</span></a>
+          <a href="#" class="category"><img class="category__img" src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=500&q=60" alt="" /><span class="category__label">Bags</span></a>
+          <a href="#" class="category"><img class="category__img" src="https://images.unsplash.com/photo-1611374243371-1e95da0f8d92?auto=format&fit=crop&w=500&q=60" alt="" /><span class="category__label">Balls</span></a>
+        </div>
+      </div>
+      <div class="code"><button class="code__copy" data-copy>Copy</button><pre>&lt;div class="category-grid"&gt;
+  &lt;a href="#" class="category"&gt;
+    &lt;img class="category__img" src="…" alt="" /&gt;
+    &lt;span class="category__label"&gt;Clubs&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/div&gt;</pre></div>
+    </section>
+
+    <!-- ========== BLOCKS ========== -->
+    <h2 id="blocks" style="font-family: var(--font-family-heading); font-size: 28px; font-weight: 500; margin: 48px 0 16px; padding-top: 24px; border-top: 1px solid var(--color-border-default);">Blocks</h2>
+
+    <!-- HEADER -->
+    <section class="doc" id="header-block">
+      <div class="doc__header">
+        <div class="doc__eyebrow">Block</div>
+        <h2 class="doc__title">Header</h2>
+        <p class="doc__desc">Stacked site header with logo, primary nav, and utility icons.</p>
+      </div>
+      <div class="preview preview--full">
+        <header class="site-header">
+          <a class="site-header__logo" href="#">PHPure</a>
+          <nav class="site-header__nav">
+            <a href="#">Bestsellers</a>
+            <a href="#">Clubs</a>
+            <a href="#">Apparel</a>
+            <a href="#">Stories</a>
+            <a href="#">About</a>
+          </nav>
+          <div class="site-header__actions">
+            <button class="icon-btn" aria-label="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>
+            <button class="icon-btn" aria-label="Account"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></button>
+            <button class="icon-btn" aria-label="Cart"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h2l3 13h12l2-9H6"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg></button>
+          </div>
+        </header>
+      </div>
+    </section>
+
+    <!-- HERO -->
+    <section class="doc" id="hero">
+      <div class="doc__header">
+        <div class="doc__eyebrow">Block</div>
+        <h2 class="doc__title">Hero</h2>
+        <p class="doc__desc">Above-the-fold split-photo hero with a centered title and CTA.</p>
+      </div>
+      <div class="preview preview--full">
+        <div class="hero">
+          <div class="hero__media"><img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=900&q=70" alt="" /></div>
+          <div class="hero__media"><img src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=900&q=70" alt="" /></div>
+          <div class="hero__content">
+            <h1 class="hero__title">The passion.<br/>The lifestyle.</h1>
+            <p class="hero__sub">Made for the long game.</p>
+            <div class="hero__actions">
+              <a href="#" class="btn btn--primary">Shop now</a>
+              <a href="#" class="btn btn--tertiary" style="color: var(--color-text-knockout); border-color: var(--color-border-knockout);">Watch the film</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="doc" id="cta-banner">
+      <div class="doc__header">
+        <div class="doc__eyebrow">Block</div>
+        <h2 class="doc__title">CTA banner</h2>
+        <p class="doc__desc">Knockout banner with a copy-block and an inline newsletter form.</p>
+      </div>
+      <div class="preview preview--full">
+        <div class="cta-banner">
+          <div>
+            <h3 class="cta-banner__title">Join the inner circle.</h3>
+            <p class="cta-banner__desc">First-look drops, member events, and the occasional well-kept tip. No noise, ever.</p>
+          </div>
+          <form class="cta-banner__form" onsubmit="event.preventDefault()">
+            <input class="input" type="email" placeholder="you@example.com" />
+            <button class="btn btn--primary" style="background: var(--color-background-default); color: var(--color-text-default); border-color: var(--color-background-default);">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMAGE CTA -->
+    <section class="doc" id="image-cta">
+      <div class="doc__header">
+        <div class="doc__eyebrow">Block</div>
+        <h2 class="doc__title">Image CTA</h2>
+        <p class="doc__desc">Full-bleed image with an overlay headline and CTA — used to close the homepage.</p>
+      </div>
+      <div class="preview preview--full">
+        <div class="image-cta">
+          <img class="image-cta__bg" src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1600&q=70" alt="" />
+          <div class="image-cta__inner">
+            <h3 class="image-cta__title">Find your line.</h3>
+            <p class="image-cta__desc">Step into the new season collection — built for the way you actually play.</p>
+            <a href="#" class="btn btn--primary">Explore the collection</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="doc" id="testimonial">
+      <div class="doc__header">
+        <div class="doc__eyebrow">Block</div>
+        <h2 class="doc__title">Testimonial</h2>
+        <p class="doc__desc">Editorial pull-quote with portrait, on a brand-subtle surface.</p>
+      </div>
+      <div class="preview preview--full">
+        <div class="testimonial">
+          <div>
+            <p class="testimonial__quote">"The gear is excellent, but it's the attention to the little things — the bag tag, the cover, the unboxing — that made me come back."</p>
+            <div class="testimonial__cite">
+              <span style="font-weight: 700;">Mara Lindqvist</span>
+              <span>Member since 2023</span>
+            </div>
+          </div>
+          <img class="testimonial__avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=70" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEW -->
+    <section class="doc" id="review">
+      <div class="doc__header">
+        <div class="doc__eyebrow">Block</div>
+        <h2 class="doc__title">Review card</h2>
+        <p class="doc__desc">Short customer quote on a neutral surface. Used in a row on the homepage.</p>
+      </div>
+      <div class="preview" style="gap: 24px;">
+        <article class="review" style="max-width: 360px;">
+          <span class="review__stars" aria-label="5 out of 5">★★★★★</span>
+          <p class="review__quote">"Best putter I've ever owned — and the support after my switch was unreal."</p>
+          <span class="review__author">— Jonas R., verified buyer</span>
+        </article>
+        <article class="review" style="max-width: 360px;">
+          <span class="review__stars" aria-label="5 out of 5">★★★★★</span>
+          <p class="review__quote">"Delivery in 36h, and the packaging alone made it feel like a gift."</p>
+          <span class="review__author">— Elise D., verified buyer</span>
+        </article>
+      </div>
+      <div class="code"><button class="code__copy" data-copy>Copy</button><pre>&lt;article class="review"&gt;
+  &lt;span class="review__stars" aria-label="5 out of 5"&gt;★★★★★&lt;/span&gt;
+  &lt;p class="review__quote"&gt;"Best putter I've ever owned…"&lt;/p&gt;
+  &lt;span class="review__author"&gt;— Jonas R., verified buyer&lt;/span&gt;
+&lt;/article&gt;</pre></div>
+    </section>
+
+    <!-- USPs -->
+    <section class="doc" id="usps">
+      <div class="doc__header">
+        <div class="doc__eyebrow">Block</div>
+        <h2 class="doc__title">USPs strip</h2>
+        <p class="doc__desc">Four-up trust-builder strip — collapses to 2 then 1 column at breakpoints.</p>
+      </div>
+      <div class="preview preview--full">
+        <div class="usps">
+          <div class="usp"><div class="usp__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h13l5 5v5h-3"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></div><div class="usp__title">Free shipping</div><div class="usp__desc">On orders over €100</div></div>
+          <div class="usp"><div class="usp__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a4 4 0 0 1-4 4H7l-4 3V6a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg></div><div class="usp__title">Expert support</div><div class="usp__desc">PGA-trained staff</div></div>
+          <div class="usp"><div class="usp__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div><div class="usp__title">100-day returns</div><div class="usp__desc">No questions asked</div></div>
+          <div class="usp"><div class="usp__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/></svg></div><div class="usp__title">Lifetime fitting</div><div class="usp__desc">Refit your clubs anytime</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="doc" id="story">
+      <div class="doc__header">
+        <div class="doc__eyebrow">Block</div>
+        <h2 class="doc__title">Story card</h2>
+        <p class="doc__desc">Editorial split-view used on the "Latest stories" row.</p>
+      </div>
+      <div class="preview preview--full">
+        <article class="story">
+          <div class="story__media"><img src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=900&q=70" alt="" /></div>
+          <div class="story__body">
+            <span class="tag">Inside PHPure</span>
+            <h3 class="story__title">A weekend on the Algarve, club in hand.</h3>
+            <p class="story__excerpt">Three days, three courses, one lesson on patience. Notes from the coast.</p>
+            <div class="story__meta">
+              <span>Apr 12 · 2025</span><span>·</span><span>4 min read</span>
+            </div>
+            <a href="#" class="btn btn--tertiary" style="align-self: flex-start;">Read story</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHT -->
+    <section class="doc" id="highlight">
+      <div class="doc__header">
+        <div class="doc__eyebrow">Block</div>
+        <h2 class="doc__title">Video highlight</h2>
+        <p class="doc__desc">Cinematic 21:9 panel with a play button, overlay, and title.</p>
+      </div>
+      <div class="preview preview--full">
+        <div class="highlight">
+          <img class="highlight__bg" src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1600&q=70" alt="" />
+          <div class="highlight__overlay"></div>
+          <button class="highlight__play" aria-label="Play"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg></button>
+          <h3 class="highlight__title">The making of the 2025 line.</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <section class="doc" id="footer-block">
+      <div class="doc__header">
+        <div class="doc__eyebrow">Block</div>
+        <h2 class="doc__title">Footer</h2>
+        <p class="doc__desc">Four-column footer with the brand block + three groups of links and a legal strip.</p>
+      </div>
+      <div class="preview preview--full">
+        <footer class="site-footer">
+          <div class="site-footer__cols">
+            <div class="site-footer__col">
+              <div class="site-footer__brand">PHPure</div>
+              <p style="margin:0; opacity: 0.7; font-size: var(--font-size-body-sm);">The passion. The lifestyle. Made for the long game.</p>
+            </div>
+            <div class="site-footer__col">
+              <h4>Shop</h4>
+              <ul><li><a href="#">Clubs</a></li><li><a href="#">Apparel</a></li><li><a href="#">Bags</a></li><li><a href="#">Balls</a></li></ul>
+            </div>
+            <div class="site-footer__col">
+              <h4>Support</h4>
+              <ul><li><a href="#">Contact</a></li><li><a href="#">Returns</a></li><li><a href="#">Shipping</a></li><li><a href="#">FAQ</a></li></ul>
+            </div>
+            <div class="site-footer__col">
+              <h4>Company</h4>
+              <ul><li><a href="#">About</a></li><li><a href="#">Stories</a></li><li><a href="#">Press</a></li><li><a href="#">Careers</a></li></ul>
+            </div>
+          </div>
+          <div class="site-footer__legal">
+            <span>© 2025 PHPure</span>
+            <span>Privacy · Terms</span>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  // ---- brand toggle ----
+  const root = document.body;
+  document.querySelectorAll('[data-brand-toggle]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const brand = btn.dataset.brandToggle;
+      root.dataset.brand = brand;
+      document.querySelectorAll('[data-brand-toggle]').forEach(b => b.setAttribute('aria-pressed', b === btn));
+    });
+  });
+
+  // ---- viewport toggle ----
+  document.querySelectorAll('[data-viewport-toggle]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const vp = btn.dataset.viewportToggle;
+      document.querySelectorAll('.preview').forEach(p => p.dataset.viewport = vp);
+      document.querySelectorAll('[data-viewport-toggle]').forEach(b => b.setAttribute('aria-pressed', b === btn));
+    });
+  });
+
+  // ---- copy-code ----
+  document.querySelectorAll('[data-copy]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const pre = btn.parentElement.querySelector('pre');
+      if (!pre) return;
+      navigator.clipboard.writeText(pre.textContent).then(() => {
+        const o = btn.textContent; btn.textContent = 'Copied'; setTimeout(() => btn.textContent = o, 1200);
+      });
+    });
+  });
+
+  // ---- active sidebar link on scroll ----
+  const links = document.querySelectorAll('.sidebar a[href^="#"]');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        links.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === '#' + id));
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  document.querySelectorAll('section.doc').forEach(s => obs.observe(s));
+
+  // ---- color swatches: enumerate --color-* on :root ----
+  const swatchHost = document.getElementById('color-swatches');
+  const SWATCHES = [
+    'background-default', 'background-muted', 'background-muted-soft',
+    'background-brand-strong', 'background-brand-subtle', 'background-brand-knockout',
+    'background-subtle-hover', 'background-disabled',
+    'background-utility-error', 'background-utility-warning', 'background-utility-success', 'background-utility-info',
+    'text-default', 'text-brand', 'text-subtle', 'text-knockout', 'text-disabled', 'text-placeholder', 'text-accent',
+    'border-default', 'border-default-hover', 'border-strong', 'border-subtle', 'border-knockout', 'border-disabled', 'border-focus'
+  ];
+  function paintSwatches() {
+    swatchHost.innerHTML = '';
+    const styles = getComputedStyle(document.body);
+    SWATCHES.forEach(name => {
+      const cssVar = '--color-' + name;
+      const val = styles.getPropertyValue(cssVar).trim() || '—';
+      const node = document.createElement('div');
+      node.className = 'swatch';
+      node.innerHTML = `
+        <div class="swatch__chip" style="background:${val}"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">${name}</div>
+          <div class="swatch__var">${val}</div>
+        </div>`;
+      swatchHost.appendChild(node);
+    });
+  }
+  paintSwatches();
+  // re-paint when brand changes
+  new MutationObserver(paintSwatches).observe(document.body, { attributes: true, attributeFilter: ['data-brand'] });
+</script>
+</body>
+</html>
