@@ -171,9 +171,118 @@
 .card__price { font-weight: var(--font-weight-label); color: var(--color-text-default); font-size: var(--font-size-label); }
 .card__footer { display: flex; align-items: center; justify-content: space-between; margin-top: 12px; }
 
-/* product card — image is INSIDE the cream tile with rounded inner corners */
-.product-card { position: relative; }
-.product-card .product-card__tag { position: absolute; top: calc(var(--card-padding-vertical, 16px) + 12px); left: calc(var(--card-padding-horizontal, 16px) + 12px); z-index: 2; }
+/* ============ Product card (full Hyvä pattern) ============ */
+.product-card {
+  position: relative;
+  background: var(--card-background-default);
+  border: 1px solid var(--card-border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--card-padding-vertical, 16px) var(--card-padding-horizontal, 16px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+  color: var(--card-content-default);
+  transition: background 140ms ease;
+}
+.product-card:hover { background: var(--card-background-hover); }
+.product-card:focus-within { outline: 2px solid var(--card-border-focus); outline-offset: 2px; }
+
+.product-card__tag {
+  position: absolute;
+  top: calc(var(--card-padding-vertical, 16px) + 8px);
+  right: calc(var(--card-padding-horizontal, 16px) + 8px);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  background: var(--color-background-brand-subtle);
+  color: var(--color-text-default);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-meta-sm, 12px);
+  font-weight: var(--font-weight-label);
+  line-height: 1;
+  border-radius: var(--radius-pill);
+}
+.product-card__tag--knockout {
+  background: var(--color-background-brand-knockout);
+  color: var(--color-text-knockout);
+}
+
+.product-card__media-wrap {
+  width: 100%;
+  height: var(--card-image-height, 284px);
+  background: var(--color-background-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+.product-card__media {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.product-card__brand {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-meta-sm, 12px);
+  font-weight: var(--font-weight-label);
+  color: var(--color-text-brand);
+  letter-spacing: 0.3px;
+}
+.product-card__title {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-heading);
+  font-size: var(--font-size-title-sm);
+  line-height: 1.2;
+  margin: 0;
+  color: var(--color-text-default);
+}
+.product-card__price {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-label);
+  color: var(--color-text-default);
+  margin-top: 4px;
+}
+
+.product-card__actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 4px;
+}
+.product-card__cart {
+  flex: 1;
+  padding: 12px 20px;
+  font-size: var(--font-size-label-sm);
+}
+.product-card__cart svg { width: 16px; height: 16px; }
+.product-card__wishlist {
+  width: 44px; height: 44px;
+  flex: 0 0 44px;
+  display: grid; place-items: center;
+  background: var(--color-background-default);
+  color: var(--color-text-brand);
+  border: 1px solid var(--card-background-default);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+.product-card__wishlist:hover { background: var(--color-background-muted); }
+.product-card__wishlist svg { width: 18px; height: 18px; }
+
+/* Product card grid — 4 across on desktop, 2 on tablet, 1 on phone */
+.product-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+@media (max-width: 960px) { .product-card-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .product-card-grid { grid-template-columns: 1fr; } }
 
 /* ============ Category card / grid (2×2 hero-tile) ============ */
 .category-grid {
@@ -410,13 +519,13 @@
 /* ============ Video highlight (cinematic) ============ */
 .highlight {
   position: relative;
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   aspect-ratio: 21 / 9;
   background: var(--color-background-muted);
 }
 .highlight__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.highlight__overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.55) 100%); }
+.highlight__overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 100%); }
 .highlight__play {
   position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
   width: 88px; height: 88px; border-radius: var(--radius-pill);
@@ -424,7 +533,18 @@
   display: grid; place-items: center; border: 0; cursor: pointer;
   box-shadow: var(--shadow-default, 0 2px 8px rgba(0,0,0,.2));
 }
-.highlight__title { position: absolute; left: 40px; bottom: 32px; right: 40px; color: var(--color-text-knockout); font-family: var(--font-family-heading); font-size: var(--font-size-headline-sm); margin: 0; max-width: 60%; }
+.highlight__title {
+  position: absolute;
+  left: 56px; bottom: 40px; right: 56px;
+  color: var(--color-text-knockout);
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-heading);
+  font-size: var(--font-size-headline-sm);
+  line-height: 1.1;
+  margin: 0;
+  max-width: 70%;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+}
 
 /* ============ Section title pattern used on the homepage ============ */
 .section-title {

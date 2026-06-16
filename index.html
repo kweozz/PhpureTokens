@@ -934,9 +934,118 @@ section.doc {
 .card__price { font-weight: var(--font-weight-label); color: var(--color-text-default); font-size: var(--font-size-label); }
 .card__footer { display: flex; align-items: center; justify-content: space-between; margin-top: 12px; }
 
-/* product card — image is INSIDE the cream tile with rounded inner corners */
-.product-card { position: relative; }
-.product-card .product-card__tag { position: absolute; top: calc(var(--card-padding-vertical, 16px) + 12px); left: calc(var(--card-padding-horizontal, 16px) + 12px); z-index: 2; }
+/* ============ Product card (full Hyvä pattern) ============ */
+.product-card {
+  position: relative;
+  background: var(--card-background-default);
+  border: 1px solid var(--card-border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--card-padding-vertical, 16px) var(--card-padding-horizontal, 16px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+  color: var(--card-content-default);
+  transition: background 140ms ease;
+}
+.product-card:hover { background: var(--card-background-hover); }
+.product-card:focus-within { outline: 2px solid var(--card-border-focus); outline-offset: 2px; }
+
+.product-card__tag {
+  position: absolute;
+  top: calc(var(--card-padding-vertical, 16px) + 8px);
+  right: calc(var(--card-padding-horizontal, 16px) + 8px);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  background: var(--color-background-brand-subtle);
+  color: var(--color-text-default);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-meta-sm, 12px);
+  font-weight: var(--font-weight-label);
+  line-height: 1;
+  border-radius: var(--radius-pill);
+}
+.product-card__tag--knockout {
+  background: var(--color-background-brand-knockout);
+  color: var(--color-text-knockout);
+}
+
+.product-card__media-wrap {
+  width: 100%;
+  height: var(--card-image-height, 284px);
+  background: var(--color-background-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+.product-card__media {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.product-card__brand {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-meta-sm, 12px);
+  font-weight: var(--font-weight-label);
+  color: var(--color-text-brand);
+  letter-spacing: 0.3px;
+}
+.product-card__title {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-heading);
+  font-size: var(--font-size-title-sm);
+  line-height: 1.2;
+  margin: 0;
+  color: var(--color-text-default);
+}
+.product-card__price {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-label);
+  color: var(--color-text-default);
+  margin-top: 4px;
+}
+
+.product-card__actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 4px;
+}
+.product-card__cart {
+  flex: 1;
+  padding: 12px 20px;
+  font-size: var(--font-size-label-sm);
+}
+.product-card__cart svg { width: 16px; height: 16px; }
+.product-card__wishlist {
+  width: 44px; height: 44px;
+  flex: 0 0 44px;
+  display: grid; place-items: center;
+  background: var(--color-background-default);
+  color: var(--color-text-brand);
+  border: 1px solid var(--card-background-default);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+.product-card__wishlist:hover { background: var(--color-background-muted); }
+.product-card__wishlist svg { width: 18px; height: 18px; }
+
+/* Product card grid — 4 across on desktop, 2 on tablet, 1 on phone */
+.product-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+@media (max-width: 960px) { .product-card-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .product-card-grid { grid-template-columns: 1fr; } }
 
 /* ============ Category card / grid (2×2 hero-tile) ============ */
 .category-grid {
@@ -1173,13 +1282,13 @@ section.doc {
 /* ============ Video highlight (cinematic) ============ */
 .highlight {
   position: relative;
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   aspect-ratio: 21 / 9;
   background: var(--color-background-muted);
 }
 .highlight__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.highlight__overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.55) 100%); }
+.highlight__overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.55) 100%); }
 .highlight__play {
   position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
   width: 88px; height: 88px; border-radius: var(--radius-pill);
@@ -1187,7 +1296,18 @@ section.doc {
   display: grid; place-items: center; border: 0; cursor: pointer;
   box-shadow: var(--shadow-default, 0 2px 8px rgba(0,0,0,.2));
 }
-.highlight__title { position: absolute; left: 40px; bottom: 32px; right: 40px; color: var(--color-text-knockout); font-family: var(--font-family-heading); font-size: var(--font-size-headline-sm); margin: 0; max-width: 60%; }
+.highlight__title {
+  position: absolute;
+  left: 56px; bottom: 40px; right: 56px;
+  color: var(--color-text-knockout);
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-heading);
+  font-size: var(--font-size-headline-sm);
+  line-height: 1.1;
+  margin: 0;
+  max-width: 70%;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+}
 
 /* ============ Section title pattern used on the homepage ============ */
 .section-title {
@@ -1464,37 +1584,105 @@ section.doc {
     <section class="doc" id="product-card">
       <div class="doc__header">
         <div class="doc__eyebrow">Component</div>
-        <h2 class="doc__title">Product card</h2>
-        <p class="doc__desc">Bestsellers tile: cream surface, padded image with inner rounding, optional tag floating over the image.</p>
+        <h2 class="doc__title">Product card · Hyvä pattern</h2>
+        <p class="doc__desc">Bestsellers tile — cream <code>card.background.default</code> surface, padded white image area, brand label, title, price, full-width <code>Add to cart</code> CTA, circular wishlist button. Tag floats top-right.</p>
       </div>
-      <div class="preview" style="gap: 16px;">
-        <article class="card product-card" style="max-width: 240px;">
-          <span class="tag product-card__tag">New</span>
-          <img class="card__media" src="https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?auto=format&fit=crop&w=400&q=60" alt="" />
-          <div class="card__body">
-            <h3 class="card__title">Putter 01</h3>
-            <p class="card__sub">Tour-weight, matte</p>
-            <div class="card__footer"><span class="card__price">€249</span></div>
-          </div>
-        </article>
-        <article class="card product-card" style="max-width: 240px;">
-          <span class="tag tag--subtle product-card__tag">Limited</span>
-          <img class="card__media" src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=400&q=60" alt="" />
-          <div class="card__body">
-            <h3 class="card__title">Polo · Heather</h3>
-            <p class="card__sub">Pima cotton</p>
-            <div class="card__footer"><span class="card__price">€89</span></div>
-          </div>
-        </article>
-        <article class="card product-card" style="max-width: 240px;">
-          <img class="card__media" src="https://images.unsplash.com/photo-1611374243371-1e95da0f8d92?auto=format&fit=crop&w=400&q=60" alt="" />
-          <div class="card__body">
-            <h3 class="card__title">Glove · Lambskin</h3>
-            <p class="card__sub">Tour-grade leather</p>
-            <div class="card__footer"><span class="card__price">€34</span></div>
-          </div>
-        </article>
+      <div class="preview preview--full">
+        <div class="product-card-grid" style="padding: 24px;">
+          <article class="product-card">
+            <span class="product-card__tag">New</span>
+            <div class="product-card__media-wrap">
+              <img class="product-card__media" src="https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?auto=format&fit=crop&w=600&q=70" alt="" />
+            </div>
+            <span class="product-card__brand">Druids</span>
+            <h3 class="product-card__title">Flyknit Racer</h3>
+            <span class="product-card__price">€99.99</span>
+            <div class="product-card__actions">
+              <button class="btn btn--primary product-card__cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h2l3 13h12l2-9H6"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
+                Add to cart
+              </button>
+              <button class="product-card__wishlist" aria-label="Add to wishlist">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="product-card__tag">New</span>
+            <div class="product-card__media-wrap">
+              <img class="product-card__media" src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=600&q=70" alt="" />
+            </div>
+            <span class="product-card__brand">Druids</span>
+            <h3 class="product-card__title">Flyknit Racer</h3>
+            <span class="product-card__price">€99.99</span>
+            <div class="product-card__actions">
+              <button class="btn btn--primary product-card__cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h2l3 13h12l2-9H6"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
+                Add to cart
+              </button>
+              <button class="product-card__wishlist" aria-label="Add to wishlist">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="product-card__tag">New</span>
+            <div class="product-card__media-wrap">
+              <img class="product-card__media" src="https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?auto=format&fit=crop&w=600&q=70" alt="" />
+            </div>
+            <span class="product-card__brand">Druids</span>
+            <h3 class="product-card__title">Flyknit Racer</h3>
+            <span class="product-card__price">€99.99</span>
+            <div class="product-card__actions">
+              <button class="btn btn--primary product-card__cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h2l3 13h12l2-9H6"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
+                Add to cart
+              </button>
+              <button class="product-card__wishlist" aria-label="Add to wishlist">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="product-card__tag">New</span>
+            <div class="product-card__media-wrap">
+              <img class="product-card__media" src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=600&q=70" alt="" />
+            </div>
+            <span class="product-card__brand">Druids</span>
+            <h3 class="product-card__title">Flyknit Racer</h3>
+            <span class="product-card__price">€99.99</span>
+            <div class="product-card__actions">
+              <button class="btn btn--primary product-card__cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h2l3 13h12l2-9H6"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
+                Add to cart
+              </button>
+              <button class="product-card__wishlist" aria-label="Add to wishlist">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+            </div>
+          </article>
+        </div>
       </div>
+      <div class="code"><button class="code__copy" data-copy>Copy</button><pre>&lt;article class="product-card"&gt;
+  &lt;span class="product-card__tag"&gt;New&lt;/span&gt;
+  &lt;div class="product-card__media-wrap"&gt;
+    &lt;img class="product-card__media" src="…" alt="" /&gt;
+  &lt;/div&gt;
+  &lt;span class="product-card__brand"&gt;Druids&lt;/span&gt;
+  &lt;h3 class="product-card__title"&gt;Flyknit Racer&lt;/h3&gt;
+  &lt;span class="product-card__price"&gt;€99.99&lt;/span&gt;
+  &lt;div class="product-card__actions"&gt;
+    &lt;button class="btn btn--primary product-card__cart"&gt;
+      &lt;svg&gt;…&lt;/svg&gt; Add to cart
+    &lt;/button&gt;
+    &lt;button class="product-card__wishlist" aria-label="Add to wishlist"&gt;
+      &lt;svg&gt;…&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</pre></div>
     </section>
 
     <!-- CATEGORY CARD -->
