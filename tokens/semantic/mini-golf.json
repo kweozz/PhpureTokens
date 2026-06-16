@@ -178,32 +178,6 @@
         }
       }
     },
-    "radius": {
-      "none": {
-        "$type": "borderRadius",
-        "$value": "{core.borderRadius.0}"
-      },
-      "sm": {
-        "$type": "borderRadius",
-        "$value": "{core.borderRadius.12}"
-      },
-      "md": {
-        "$type": "borderRadius",
-        "$value": "{core.borderRadius.16}"
-      },
-      "lg": {
-        "$type": "borderRadius",
-        "$value": "{core.borderRadius.32}"
-      },
-      "xl": {
-        "$type": "borderRadius",
-        "$value": "{core.borderRadius.full}"
-      },
-      "pill": {
-        "$type": "borderRadius",
-        "$value": "{core.borderRadius.full}"
-      }
-    },
     "borderWidth": {
       "none": {
         "$type": "borderWidth",
@@ -430,6 +404,30 @@
           "textDecoration": "{core.textDecoration.none}",
           "textCase": "{core.textCase.none}"
         }
+      },
+      "meta": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{semantic.fontFamily.body}",
+          "fontWeight": "{semantic.fontWeight.label}",
+          "fontSize": "{viewport.fontSize.meta}",
+          "lineHeight": "{core.lineHeight.normal}",
+          "letterSpacing": "{core.letterSpacing.normal}",
+          "textDecoration": "{core.textDecoration.none}",
+          "textCase": "{core.textCase.none}"
+        }
+      },
+      "meta-sm": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{semantic.fontFamily.body}",
+          "fontWeight": "{semantic.fontWeight.label}",
+          "fontSize": "{viewport.fontSize.meta-sm}",
+          "lineHeight": "{core.lineHeight.snug}",
+          "letterSpacing": "{core.letterSpacing.normal}",
+          "textDecoration": "{core.textDecoration.none}",
+          "textCase": "{core.textCase.none}"
+        }
       }
     },
     "fontWeight": {
@@ -466,6 +464,32 @@
       "logo": {
         "$type": "fontFamilies",
         "$value": "{core.fontFamily.grenadine-mvb}"
+      }
+    },
+    "borderRadius": {
+      "none": {
+        "$type": "borderRadius",
+        "$value": "{core.borderRadius.0}"
+      },
+      "sm": {
+        "$type": "borderRadius",
+        "$value": "{core.borderRadius.12}"
+      },
+      "md": {
+        "$type": "borderRadius",
+        "$value": "{core.borderRadius.16}"
+      },
+      "lg": {
+        "$type": "borderRadius",
+        "$value": "{core.borderRadius.32}"
+      },
+      "xl": {
+        "$type": "borderRadius",
+        "$value": "{core.borderRadius.full}"
+      },
+      "pill": {
+        "$type": "borderRadius",
+        "$value": "{core.borderRadius.full}"
       }
     }
   }

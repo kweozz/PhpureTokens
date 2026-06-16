@@ -24,7 +24,7 @@
         },
         "muted-soft": {
           "$type": "color",
-          "$value": "{brand.color.offWhite.50}"
+          "$value": "{core.color.neutral.50}"
         },
         "subtle-hover": {
           "$type": "color",
@@ -430,6 +430,30 @@
           "textDecoration": "{core.textDecoration.none}",
           "textCase": "{core.textCase.none}"
         }
+      },
+      "meta": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{semantic.fontFamily.body}",
+          "fontWeight": "{semantic.fontWeight.label}",
+          "fontSize": "{viewport.fontSize.meta}",
+          "lineHeight": "{core.lineHeight.normal}",
+          "letterSpacing": "{core.letterSpacing.normal}",
+          "textDecoration": "{core.textDecoration.none}",
+          "textCase": "{core.textCase.none}"
+        }
+      },
+      "meta-sm": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{semantic.fontFamily.body}",
+          "fontWeight": "{semantic.fontWeight.label}",
+          "fontSize": "{viewport.fontSize.meta-sm}",
+          "lineHeight": "{core.lineHeight.snug}",
+          "letterSpacing": "{core.letterSpacing.normal}",
+          "textDecoration": "{core.textDecoration.none}",
+          "textCase": "{core.textCase.none}"
+        }
       }
     },
     "fontWeight": {
@@ -443,7 +467,7 @@
       },
       "title": {
         "$type": "fontWeights",
-        "$value": "{core.fontWeight.regular}"
+        "$value": "{core.fontWeight.medium}"
       },
       "body": {
         "$type": "fontWeights",

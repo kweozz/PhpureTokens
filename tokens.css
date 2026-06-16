@@ -6,7 +6,7 @@
   --color-background-brand-knockout: #004d40;
   --color-background-default: #ffffff;
   --color-background-muted: #f5f5f5;
-  --color-background-muted-soft: #f5f5f5; /* unresolved ref: {brand.color.offWhite.50} */
+  --color-background-muted-soft: #fafafa;
   --color-background-subtle-hover: #f9f4e8;
   --color-background-disabled: #bdcbd6;
   --color-background-utility-error: #fee2e2;
@@ -66,7 +66,7 @@
   --font-family-logo: "Dejanire Headline", system-ui, sans-serif;
   --font-weight-display: 500;
   --font-weight-heading: 500;
-  --font-weight-title: 400;
+  --font-weight-title: 500;
   --font-weight-body: 400;
   --font-weight-label: 700;
   --typography-display-font-family: "Dejanire Headline", system-ui, sans-serif;
@@ -90,17 +90,17 @@
   --typography-headline-sm-line-height: 100%;
   --typography-headline-sm-letter-spacing: 0px;
   --typography-title-lg-font-family: "Dejanire Headline", system-ui, sans-serif;
-  --typography-title-lg-font-weight: 400;
+  --typography-title-lg-font-weight: 500;
   --typography-title-lg-font-size: 32px;
   --typography-title-lg-line-height: 100%;
   --typography-title-lg-letter-spacing: 0px;
   --typography-title-font-family: "ITC Avant Garde Gothic Pro", system-ui, sans-serif;
-  --typography-title-font-weight: 400;
+  --typography-title-font-weight: 500;
   --typography-title-font-size: 24px;
   --typography-title-line-height: 150%;
   --typography-title-letter-spacing: 0px;
   --typography-title-sm-font-family: "ITC Avant Garde Gothic Pro", system-ui, sans-serif;
-  --typography-title-sm-font-weight: 400;
+  --typography-title-sm-font-weight: 500;
   --typography-title-sm-font-size: 18px;
   --typography-title-sm-line-height: 125%;
   --typography-title-sm-letter-spacing: 0px;
@@ -139,6 +139,16 @@
   --typography-logo-font-size: 30px;
   --typography-logo-line-height: 110%;
   --typography-logo-letter-spacing: 0px;
+  --typography-meta-font-family: "ITC Avant Garde Gothic Pro", system-ui, sans-serif;
+  --typography-meta-font-weight: 700;
+  --typography-meta-font-size: 14px;
+  --typography-meta-line-height: 150%;
+  --typography-meta-letter-spacing: 0px;
+  --typography-meta-sm-font-family: "ITC Avant Garde Gothic Pro", system-ui, sans-serif;
+  --typography-meta-sm-font-weight: 700;
+  --typography-meta-sm-font-size: 12px;
+  --typography-meta-sm-line-height: 125%;
+  --typography-meta-sm-letter-spacing: 0px;
   --font-size-display: 72px;
   --font-size-headline-lg: 60px;
   --font-size-headline: 48px;
@@ -265,7 +275,6 @@
   --font-family-logo: "Grenadine MVB", system-ui, sans-serif;
   --font-weight-display: 700;
   --font-weight-heading: 700;
-  --font-weight-title: 500;
   --typography-display-font-family: "Grenadine MVB", system-ui, sans-serif;
   --typography-display-font-weight: 700;
   --typography-headline-lg-font-family: "Grenadine MVB", system-ui, sans-serif;
@@ -275,11 +284,8 @@
   --typography-headline-sm-font-family: "Grenadine MVB", system-ui, sans-serif;
   --typography-headline-sm-font-weight: 700;
   --typography-title-lg-font-family: "DM Sans", system-ui, sans-serif;
-  --typography-title-lg-font-weight: 500;
   --typography-title-font-family: "DM Sans", system-ui, sans-serif;
-  --typography-title-font-weight: 500;
   --typography-title-sm-font-family: "DM Sans", system-ui, sans-serif;
-  --typography-title-sm-font-weight: 500;
   --typography-body-lg-font-family: "DM Sans", system-ui, sans-serif;
   --typography-body-font-family: "DM Sans", system-ui, sans-serif;
   --typography-body-sm-font-family: "DM Sans", system-ui, sans-serif;
@@ -288,6 +294,8 @@
   --typography-label-sm-font-family: "DM Sans", system-ui, sans-serif;
   --typography-logo-font-family: "Grenadine MVB", system-ui, sans-serif;
   --typography-logo-font-weight: 700;
+  --typography-meta-font-family: "DM Sans", system-ui, sans-serif;
+  --typography-meta-sm-font-family: "DM Sans", system-ui, sans-serif;
   --button-primary-background-default: #94530a;
   --button-primary-background-hover: #c9700e;
   --button-primary-background-active: #5a3206;
@@ -473,4 +481,18 @@
   font-size: var(--typography-logo-font-size);
   line-height: var(--typography-logo-line-height);
   letter-spacing: var(--typography-logo-letter-spacing);
+}
+.text-meta {
+  font-family: var(--typography-meta-font-family);
+  font-weight: var(--typography-meta-font-weight);
+  font-size: var(--typography-meta-font-size);
+  line-height: var(--typography-meta-line-height);
+  letter-spacing: var(--typography-meta-letter-spacing);
+}
+.text-meta-sm {
+  font-family: var(--typography-meta-sm-font-family);
+  font-weight: var(--typography-meta-sm-font-weight);
+  font-size: var(--typography-meta-sm-font-size);
+  line-height: var(--typography-meta-sm-line-height);
+  letter-spacing: var(--typography-meta-sm-letter-spacing);
 }

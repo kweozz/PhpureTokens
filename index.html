@@ -5,9 +5,1203 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PHPure · Components</title>
   <meta name="description" content="A shadcn-style overview of PHPure's design-system components, bound to the multi-brand token set (golf + mini-golf)." />
-  <link rel="stylesheet" href="tokens.css" />
-  <link rel="stylesheet" href="site.css" />
-  <link rel="stylesheet" href="components.css" />
+  <style>
+/* === tokens.css === */
+/* tokens.css — generated from ./tokens. Do not hand-edit. */
+
+:root {
+  --color-background-brand-strong: #f1e3c6;
+  --color-background-brand-subtle: #fcf9f4;
+  --color-background-brand-knockout: #004d40;
+  --color-background-default: #ffffff;
+  --color-background-muted: #f5f5f5;
+  --color-background-muted-soft: #fafafa;
+  --color-background-subtle-hover: #f9f4e8;
+  --color-background-disabled: #bdcbd6;
+  --color-background-utility-error: #fee2e2;
+  --color-background-utility-error-knockout: #dc2626;
+  --color-background-utility-warning: #ffedd5;
+  --color-background-utility-warning-knockout: #ea580c;
+  --color-background-utility-success: #d1fae5;
+  --color-background-utility-success-knockout: #059669;
+  --color-background-utility-info: #dbeafe;
+  --color-background-utility-info-knockout: #2563eb;
+  --color-background-overlay: #00000040;
+  --color-background-overlay-strong: #000000e5;
+  --color-text-default: #24323d;
+  --color-text-brand: #004d40;
+  --color-text-subtle: #49637a;
+  --color-text-knockout: #ffffff;
+  --color-text-disabled: #7c96ad;
+  --color-text-placeholder: #5b7c99;
+  --color-text-accent: #6d5526;
+  --color-text-utility-error: #b91c1c;
+  --color-text-utility-warning: #c2410c;
+  --color-text-utility-success: #047857;
+  --color-text-utility-info: #1d4ed8;
+  --color-border-default-hover: #5b7c99;
+  --color-border-strong: #004d40;
+  --color-border-subtle: #f4e9d1;
+  --color-border-knockout: #ffffff;
+  --color-border-disabled: #9db0c2;
+  --color-border-default: #bdcbd6;
+  --color-border-focus: #e1ebdd;
+  --color-border-focus-knockout: #e1ebdd;
+  --color-border-utility-error: #b91c1c;
+  --color-border-utility-warning: #c2410c;
+  --color-border-utility-success: #047857;
+  --color-border-utility-info: #1d4ed8;
+  --radius-none: 0px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 9999px;
+  --border-width-none: 0px;
+  --border-width-sm: 1px;
+  --border-width-md: 2px;
+  --border-width-lg: 4px;
+  --spacing-2xs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+  --shadow-default: 0px 1px 3px 0px #00000029;
+  --font-family-heading: "Dejanire Headline", system-ui, sans-serif;
+  --font-family-body: "ITC Avant Garde Gothic Pro", system-ui, sans-serif;
+  --font-family-logo: "Dejanire Headline", system-ui, sans-serif;
+  --font-weight-display: 500;
+  --font-weight-heading: 500;
+  --font-weight-title: 500;
+  --font-weight-body: 400;
+  --font-weight-label: 700;
+  --typography-display-font-family: "Dejanire Headline", system-ui, sans-serif;
+  --typography-display-font-weight: 500;
+  --typography-display-font-size: 72px;
+  --typography-display-line-height: 100%;
+  --typography-display-letter-spacing: 0px;
+  --typography-headline-lg-font-family: "Dejanire Headline", system-ui, sans-serif;
+  --typography-headline-lg-font-weight: 500;
+  --typography-headline-lg-font-size: 60px;
+  --typography-headline-lg-line-height: 110%;
+  --typography-headline-lg-letter-spacing: 0px;
+  --typography-headline-font-family: "Dejanire Headline", system-ui, sans-serif;
+  --typography-headline-font-weight: 500;
+  --typography-headline-font-size: 48px;
+  --typography-headline-line-height: 100%;
+  --typography-headline-letter-spacing: 0px;
+  --typography-headline-sm-font-family: "Dejanire Headline", system-ui, sans-serif;
+  --typography-headline-sm-font-weight: 500;
+  --typography-headline-sm-font-size: 40px;
+  --typography-headline-sm-line-height: 100%;
+  --typography-headline-sm-letter-spacing: 0px;
+  --typography-title-lg-font-family: "Dejanire Headline", system-ui, sans-serif;
+  --typography-title-lg-font-weight: 500;
+  --typography-title-lg-font-size: 32px;
+  --typography-title-lg-line-height: 100%;
+  --typography-title-lg-letter-spacing: 0px;
+  --typography-title-font-family: "ITC Avant Garde Gothic Pro", system-ui, sans-serif;
+  --typography-title-font-weight: 500;
+  --typography-title-font-size: 24px;
+  --typography-title-line-height: 150%;
+  --typography-title-letter-spacing: 0px;
+  --typography-title-sm-font-family: "ITC Avant Garde Gothic Pro", system-ui, sans-serif;
+  --typography-title-sm-font-weight: 500;
+  --typography-title-sm-font-size: 18px;
+  --typography-title-sm-line-height: 125%;
+  --typography-title-sm-letter-spacing: 0px;
+  --typography-body-lg-font-family: "ITC Avant Garde Gothic Pro", system-ui, sans-serif;
+  --typography-body-lg-font-weight: 400;
+  --typography-body-lg-font-size: 20px;
+  --typography-body-lg-line-height: 160%;
+  --typography-body-lg-letter-spacing: 0px;
+  --typography-body-font-family: "ITC Avant Garde Gothic Pro", system-ui, sans-serif;
+  --typography-body-font-weight: 400;
+  --typography-body-font-size: 16px;
+  --typography-body-line-height: 150%;
+  --typography-body-letter-spacing: 0px;
+  --typography-body-sm-font-family: "ITC Avant Garde Gothic Pro", system-ui, sans-serif;
+  --typography-body-sm-font-weight: 400;
+  --typography-body-sm-font-size: 14px;
+  --typography-body-sm-line-height: 125%;
+  --typography-body-sm-letter-spacing: 0px;
+  --typography-label-lg-font-family: "ITC Avant Garde Gothic Pro", system-ui, sans-serif;
+  --typography-label-lg-font-weight: 700;
+  --typography-label-lg-font-size: 18px;
+  --typography-label-lg-line-height: 125%;
+  --typography-label-lg-letter-spacing: 0px;
+  --typography-label-font-family: "ITC Avant Garde Gothic Pro", system-ui, sans-serif;
+  --typography-label-font-weight: 700;
+  --typography-label-font-size: 16px;
+  --typography-label-line-height: 150%;
+  --typography-label-letter-spacing: 0px;
+  --typography-label-sm-font-family: "ITC Avant Garde Gothic Pro", system-ui, sans-serif;
+  --typography-label-sm-font-weight: 700;
+  --typography-label-sm-font-size: 14px;
+  --typography-label-sm-line-height: 125%;
+  --typography-label-sm-letter-spacing: 0px;
+  --typography-logo-font-family: "Dejanire Headline", system-ui, sans-serif;
+  --typography-logo-font-weight: 500;
+  --typography-logo-font-size: 30px;
+  --typography-logo-line-height: 110%;
+  --typography-logo-letter-spacing: 0px;
+  --typography-meta-font-family: "ITC Avant Garde Gothic Pro", system-ui, sans-serif;
+  --typography-meta-font-weight: 700;
+  --typography-meta-font-size: 14px;
+  --typography-meta-line-height: 150%;
+  --typography-meta-letter-spacing: 0px;
+  --typography-meta-sm-font-family: "ITC Avant Garde Gothic Pro", system-ui, sans-serif;
+  --typography-meta-sm-font-weight: 700;
+  --typography-meta-sm-font-size: 12px;
+  --typography-meta-sm-line-height: 125%;
+  --typography-meta-sm-letter-spacing: 0px;
+  --font-size-display: 72px;
+  --font-size-headline-lg: 60px;
+  --font-size-headline: 48px;
+  --font-size-headline-sm: 40px;
+  --font-size-title-lg: 32px;
+  --font-size-title: 24px;
+  --font-size-title-sm: 18px;
+  --font-size-body-lg: 20px;
+  --font-size-body: 16px;
+  --font-size-body-sm: 14px;
+  --font-size-label-lg: 18px;
+  --font-size-label: 16px;
+  --font-size-label-sm: 14px;
+  --font-size-meta: 14px;
+  --font-size-meta-sm: 12px;
+  --font-size-logo: 30px;
+  --button-primary-background-default: #004d40;
+  --button-primary-background-hover: #187162;
+  --button-primary-background-active: #003e33;
+  --button-primary-background-disabled: #dee5eb;
+  --button-primary-content-default: #ffffff;
+  --button-primary-content-hover: #ffffff;
+  --button-primary-content-active: #ffffff;
+  --button-primary-content-disabled: #49637a;
+  --button-primary-border-default: #004d40;
+  --button-primary-border-hover: #2f9483;
+  --button-primary-border-active: #187162;
+  --button-primary-border-focus: #e1ebdd;
+  --button-primary-border-disabled: #dee5eb;
+  --button-primary-border-radius-default: 9999px;
+  --button-secondary-background-default: #f9f4e8;
+  --button-secondary-background-hover: #f1e3c6;
+  --button-secondary-background-active: #d8c7a4;
+  --button-secondary-background-disabled: #eff2f5;
+  --button-secondary-content-default: #49381a;
+  --button-secondary-content-hover: #49381a;
+  --button-secondary-content-active: #49381a;
+  --button-secondary-content-disabled: #49637a;
+  --button-secondary-border-default: #f9f4e8;
+  --button-secondary-border-hover: #f1e3c6;
+  --button-secondary-border-active: #d8c7a4;
+  --button-secondary-border-disabled: #eff2f5;
+  --button-secondary-border-focus: #e1ebdd;
+  --button-tertiary-background-default: #ffffff00;
+  --button-tertiary-background-hover: #ffffff00;
+  --button-tertiary-background-active: #ffffff00;
+  --button-tertiary-background-disabled: #ffffff00;
+  --button-tertiary-content-default: #004d40;
+  --button-tertiary-content-hover: #004d40;
+  --button-tertiary-content-active: #004d40;
+  --button-tertiary-content-disabled: #49637a;
+  --button-tertiary-border-default: #004d40;
+  --button-tertiary-border-hover: #47b8a5;
+  --button-tertiary-border-active: #003e33;
+  --button-tertiary-border-disabled: #bdcbd6;
+  --button-tertiary-border-focus: #e1ebdd;
+  --link-content-default: #004d40;
+  --link-content-hover: #187162;
+  --link-content-active: #002e26;
+  --link-content-visited: #8c733e;
+  --link-knockout-content-default: #ffffff;
+  --link-knockout-content-hover: #fcf9f4;
+  --link-knockout-content-active: #f9f4e8;
+  --link-knockout-content-visited: #f1e3c6;
+  --form-background-default: #ffffff;
+  --form-background-focus: #ffffff;
+  --form-background-hover: #ffffff;
+  --form-background-active: #ffffff;
+  --form-background-disabled: #dee5eb;
+  --form-border-default: #9db0c2;
+  --form-border-hover: #5b7c99;
+  --form-border-active: #004d40;
+  --form-border-disabled: #7c96ad;
+  --form-border-focus: #e1ebdd;
+  --form-content-default: #24323d;
+  --form-content-disabled: #49637a;
+  --card-background-default: #fcf9f4;
+  --card-background-focus: #fcf9f4;
+  --card-background-hover: #fcf9f4;
+  --card-background-active: #f8f4ec;
+  --card-background-disabled: #dee5eb;
+  --card-border-default: #ffffff00;
+  --card-border-hover: #ffffff00;
+  --card-border-active: #ffffff00;
+  --card-border-disabled: #ffffff00;
+  --card-border-focus: #e1ebdd;
+  --card-content-default: #24323d;
+  --card-content-disabled: #49637a;
+  --card-image-height: 284px;
+  --card-padding-horizontal: 16px;
+  --card-padding-vertical: 16px;
+  --card-tags-padding: 0px;
+  --card-tags-radius-top: 0px;
+  --card-tags-radius-bottom: 16px;
+}
+
+[data-brand="mini-golf"] {
+  --color-background-brand-strong: #dceef6;
+  --color-background-brand-subtle: #fffaf5;
+  --color-background-brand-knockout: #5a3206;
+  --color-background-muted: #f7f5f0;
+  --color-background-muted-soft: #f7f5f0;
+  --color-background-subtle-hover: #e8e4da;
+  --color-background-disabled: #f7f5f0;
+  --color-text-default: #673437;
+  --color-text-brand: #773a3c;
+  --color-text-subtle: #555148;
+  --color-text-disabled: #807b70;
+  --color-text-placeholder: #555148;
+  --color-text-accent: #1c6a8e;
+  --color-border-default-hover: #a9a498;
+  --color-border-strong: #94530a;
+  --color-border-subtle: #f7f5f0;
+  --color-border-disabled: #f7f5f0;
+  --color-border-default: #e8e4da;
+  --color-border-focus: #f08f3e;
+  --color-border-focus-knockout: #f7eddd;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 32px;
+  --radius-xl: 9999px;
+  --font-family-heading: "Grenadine MVB", system-ui, sans-serif;
+  --font-family-body: "DM Sans", system-ui, sans-serif;
+  --font-family-logo: "Grenadine MVB", system-ui, sans-serif;
+  --font-weight-display: 700;
+  --font-weight-heading: 700;
+  --typography-display-font-family: "Grenadine MVB", system-ui, sans-serif;
+  --typography-display-font-weight: 700;
+  --typography-headline-lg-font-family: "Grenadine MVB", system-ui, sans-serif;
+  --typography-headline-lg-font-weight: 700;
+  --typography-headline-font-family: "Grenadine MVB", system-ui, sans-serif;
+  --typography-headline-font-weight: 700;
+  --typography-headline-sm-font-family: "Grenadine MVB", system-ui, sans-serif;
+  --typography-headline-sm-font-weight: 700;
+  --typography-title-lg-font-family: "DM Sans", system-ui, sans-serif;
+  --typography-title-font-family: "DM Sans", system-ui, sans-serif;
+  --typography-title-sm-font-family: "DM Sans", system-ui, sans-serif;
+  --typography-body-lg-font-family: "DM Sans", system-ui, sans-serif;
+  --typography-body-font-family: "DM Sans", system-ui, sans-serif;
+  --typography-body-sm-font-family: "DM Sans", system-ui, sans-serif;
+  --typography-label-lg-font-family: "DM Sans", system-ui, sans-serif;
+  --typography-label-font-family: "DM Sans", system-ui, sans-serif;
+  --typography-label-sm-font-family: "DM Sans", system-ui, sans-serif;
+  --typography-logo-font-family: "Grenadine MVB", system-ui, sans-serif;
+  --typography-logo-font-weight: 700;
+  --typography-meta-font-family: "DM Sans", system-ui, sans-serif;
+  --typography-meta-sm-font-family: "DM Sans", system-ui, sans-serif;
+  --button-primary-background-default: #94530a;
+  --button-primary-background-hover: #c9700e;
+  --button-primary-background-active: #5a3206;
+  --button-primary-background-disabled: #fdfdfc;
+  --button-primary-content-disabled: #737373;
+  --button-primary-border-default: #94530a;
+  --button-primary-border-hover: #c9700e;
+  --button-primary-border-active: #5a3206;
+  --button-primary-border-focus: #f08f3e;
+  --button-primary-border-disabled: #a3a3a3;
+  --button-primary-border-radius-default: 12px;
+  --button-secondary-background-default: #dceef6;
+  --button-secondary-background-hover: #a8d4e8;
+  --button-secondary-background-active: #75bbda;
+  --button-secondary-background-disabled: #e5e5e5;
+  --button-secondary-content-default: #5a3206;
+  --button-secondary-content-hover: #5a3206;
+  --button-secondary-content-active: #5a3206;
+  --button-secondary-content-disabled: #525252;
+  --button-secondary-border-default: #dceef6;
+  --button-secondary-border-hover: #4ca1c8;
+  --button-secondary-border-active: #2787b0;
+  --button-secondary-border-disabled: #d4d4d4;
+  --button-secondary-border-focus: #f08f3e;
+  --button-tertiary-content-default: #94530a;
+  --button-tertiary-content-hover: #c9700e;
+  --button-tertiary-content-active: #5a3206;
+  --button-tertiary-content-disabled: #807b70;
+  --button-tertiary-border-default: #94530a;
+  --button-tertiary-border-hover: #c9700e;
+  --button-tertiary-border-active: #5a3206;
+  --button-tertiary-border-disabled: #f7f5f0;
+  --button-tertiary-border-focus: #f08f3e;
+  --link-content-default: #1c6a8e;
+  --link-content-hover: #2787b0;
+  --link-content-active: #144d67;
+  --link-content-visited: #773a3c;
+  --link-knockout-content-hover: #dceef6;
+  --link-knockout-content-active: #a8d4e8;
+  --link-knockout-content-visited: #c17872;
+  --form-background-disabled: #f7f5f0;
+  --form-border-default: #e8e4da;
+  --form-border-hover: #a9a498;
+  --form-border-active: #2c2a24;
+  --form-border-disabled: #2c2a24;
+  --form-border-focus: #f08f3e;
+  --form-content-default: #2c2a24;
+  --form-content-disabled: #cfc9bb;
+  --card-background-default: #ffffff00;
+  --card-background-focus: #ffffff;
+  --card-background-hover: #ffffff;
+  --card-background-active: #ffffff;
+  --card-background-disabled: #f7f5f0;
+  --card-border-hover: #a9a498;
+  --card-border-active: #555148;
+  --card-border-disabled: #807b70;
+  --card-border-focus: #f08f3e;
+  --card-content-default: #2c1803;
+  --card-content-disabled: #807b70;
+  --card-image-height: 464px;
+  --card-padding-horizontal: 0px;
+  --card-padding-vertical: 12px;
+  --card-tags-radius-top: 9999px;
+  --card-tags-radius-bottom: 9999px;
+}
+
+@media (max-width: 960px) {
+  :root {
+    --font-size-display: 48px;
+    --font-size-headline-lg: 40px;
+    --font-size-headline: 36px;
+    --font-size-headline-sm: 24px;
+    --font-size-title-lg: 24px;
+    --font-size-title: 18px;
+    --font-size-title-sm: 18px;
+    --font-size-body-lg: 20px;
+    --font-size-body: 16px;
+    --font-size-body-sm: 14px;
+    --font-size-label-lg: 18px;
+    --font-size-label: 16px;
+    --font-size-label-sm: 14px;
+    --font-size-meta: 14px;
+    --font-size-meta-sm: 12px;
+    --font-size-logo: 30px;
+}
+}
+
+/* typography composites — apply as a single class */
+.text-display {
+  font-family: var(--typography-display-font-family);
+  font-weight: var(--typography-display-font-weight);
+  font-size: var(--typography-display-font-size);
+  line-height: var(--typography-display-line-height);
+  letter-spacing: var(--typography-display-letter-spacing);
+}
+.text-headline-lg {
+  font-family: var(--typography-headline-lg-font-family);
+  font-weight: var(--typography-headline-lg-font-weight);
+  font-size: var(--typography-headline-lg-font-size);
+  line-height: var(--typography-headline-lg-line-height);
+  letter-spacing: var(--typography-headline-lg-letter-spacing);
+}
+.text-headline {
+  font-family: var(--typography-headline-font-family);
+  font-weight: var(--typography-headline-font-weight);
+  font-size: var(--typography-headline-font-size);
+  line-height: var(--typography-headline-line-height);
+  letter-spacing: var(--typography-headline-letter-spacing);
+}
+.text-headline-sm {
+  font-family: var(--typography-headline-sm-font-family);
+  font-weight: var(--typography-headline-sm-font-weight);
+  font-size: var(--typography-headline-sm-font-size);
+  line-height: var(--typography-headline-sm-line-height);
+  letter-spacing: var(--typography-headline-sm-letter-spacing);
+}
+.text-title-lg {
+  font-family: var(--typography-title-lg-font-family);
+  font-weight: var(--typography-title-lg-font-weight);
+  font-size: var(--typography-title-lg-font-size);
+  line-height: var(--typography-title-lg-line-height);
+  letter-spacing: var(--typography-title-lg-letter-spacing);
+}
+.text-title {
+  font-family: var(--typography-title-font-family);
+  font-weight: var(--typography-title-font-weight);
+  font-size: var(--typography-title-font-size);
+  line-height: var(--typography-title-line-height);
+  letter-spacing: var(--typography-title-letter-spacing);
+}
+.text-title-sm {
+  font-family: var(--typography-title-sm-font-family);
+  font-weight: var(--typography-title-sm-font-weight);
+  font-size: var(--typography-title-sm-font-size);
+  line-height: var(--typography-title-sm-line-height);
+  letter-spacing: var(--typography-title-sm-letter-spacing);
+}
+.text-body-lg {
+  font-family: var(--typography-body-lg-font-family);
+  font-weight: var(--typography-body-lg-font-weight);
+  font-size: var(--typography-body-lg-font-size);
+  line-height: var(--typography-body-lg-line-height);
+  letter-spacing: var(--typography-body-lg-letter-spacing);
+}
+.text-body {
+  font-family: var(--typography-body-font-family);
+  font-weight: var(--typography-body-font-weight);
+  font-size: var(--typography-body-font-size);
+  line-height: var(--typography-body-line-height);
+  letter-spacing: var(--typography-body-letter-spacing);
+}
+.text-body-sm {
+  font-family: var(--typography-body-sm-font-family);
+  font-weight: var(--typography-body-sm-font-weight);
+  font-size: var(--typography-body-sm-font-size);
+  line-height: var(--typography-body-sm-line-height);
+  letter-spacing: var(--typography-body-sm-letter-spacing);
+}
+.text-label-lg {
+  font-family: var(--typography-label-lg-font-family);
+  font-weight: var(--typography-label-lg-font-weight);
+  font-size: var(--typography-label-lg-font-size);
+  line-height: var(--typography-label-lg-line-height);
+  letter-spacing: var(--typography-label-lg-letter-spacing);
+}
+.text-label {
+  font-family: var(--typography-label-font-family);
+  font-weight: var(--typography-label-font-weight);
+  font-size: var(--typography-label-font-size);
+  line-height: var(--typography-label-line-height);
+  letter-spacing: var(--typography-label-letter-spacing);
+}
+.text-label-sm {
+  font-family: var(--typography-label-sm-font-family);
+  font-weight: var(--typography-label-sm-font-weight);
+  font-size: var(--typography-label-sm-font-size);
+  line-height: var(--typography-label-sm-line-height);
+  letter-spacing: var(--typography-label-sm-letter-spacing);
+}
+.text-logo {
+  font-family: var(--typography-logo-font-family);
+  font-weight: var(--typography-logo-font-weight);
+  font-size: var(--typography-logo-font-size);
+  line-height: var(--typography-logo-line-height);
+  letter-spacing: var(--typography-logo-letter-spacing);
+}
+.text-meta {
+  font-family: var(--typography-meta-font-family);
+  font-weight: var(--typography-meta-font-weight);
+  font-size: var(--typography-meta-font-size);
+  line-height: var(--typography-meta-line-height);
+  letter-spacing: var(--typography-meta-letter-spacing);
+}
+.text-meta-sm {
+  font-family: var(--typography-meta-sm-font-family);
+  font-weight: var(--typography-meta-sm-font-weight);
+  font-size: var(--typography-meta-sm-font-size);
+  line-height: var(--typography-meta-sm-line-height);
+  letter-spacing: var(--typography-meta-sm-letter-spacing);
+}
+
+/* === site.css === */
+/* site.css — docs chrome for the PHPure components overview */
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+
+body {
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body);
+  line-height: 150%;
+  color: var(--color-text-default);
+  background: var(--color-background-default);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+code, pre { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+
+/* ---------- top bar ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 32px;
+  background: color-mix(in srgb, var(--color-background-default) 92%, transparent);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+.topbar__logo {
+  font-family: var(--font-family-logo);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--color-text-brand);
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+.topbar__nav {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  color: var(--color-text-subtle);
+}
+
+.topbar__nav a { text-decoration: none; }
+.topbar__nav a:hover { color: var(--color-text-default); }
+
+.topbar__spacer { flex: 1; }
+
+.toggle-group {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-background-muted);
+  border-radius: 9999px;
+  padding: 4px;
+  font-size: 13px;
+}
+.toggle-group button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  cursor: pointer;
+  color: var(--color-text-subtle);
+  font-family: inherit;
+  font-weight: 500;
+}
+.toggle-group button[aria-pressed="true"] {
+  background: var(--color-background-default);
+  color: var(--color-text-default);
+  box-shadow: 0 1px 2px #00000014;
+}
+
+/* ---------- layout ---------- */
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px;
+  gap: 48px;
+}
+
+.sidebar {
+  position: sticky;
+  top: 88px;
+  align-self: start;
+  max-height: calc(100vh - 110px);
+  overflow-y: auto;
+  padding-right: 16px;
+  font-size: 14px;
+}
+
+.sidebar h3 {
+  font-family: var(--font-family-body);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--color-text-subtle);
+  margin: 24px 0 8px;
+}
+.sidebar h3:first-child { margin-top: 0; }
+
+.sidebar ul { list-style: none; padding: 0; margin: 0; }
+.sidebar li a {
+  display: block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--color-text-subtle);
+  transition: background 120ms, color 120ms;
+}
+.sidebar li a:hover { background: var(--color-background-muted); color: var(--color-text-default); }
+.sidebar li a.is-active {
+  background: var(--color-background-brand-subtle);
+  color: var(--color-text-brand);
+  font-weight: 500;
+}
+
+/* ---------- main ---------- */
+main { min-width: 0; }
+
+section.doc {
+  margin-bottom: 80px;
+  scroll-margin-top: 100px;
+}
+
+.doc__header { margin-bottom: 24px; }
+.doc__eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--color-text-brand);
+  margin-bottom: 8px;
+}
+.doc__title {
+  font-family: var(--font-family-heading);
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 110%;
+  margin: 0 0 8px;
+  color: var(--color-text-default);
+}
+.doc__desc {
+  font-size: 16px;
+  color: var(--color-text-subtle);
+  max-width: 60ch;
+  margin: 0;
+}
+
+.preview {
+  position: relative;
+  background: var(--color-background-default);
+  border: 1px solid var(--color-border-default);
+  border-radius: 12px;
+  padding: 32px;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 24px 0 0;
+  transition: max-width 200ms ease;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.preview[data-viewport="sm"] { max-width: 380px; }
+.preview[data-viewport="md"] { max-width: 760px; }
+.preview[data-viewport="lg"] { max-width: 100%; }
+
+.preview--full {
+  padding: 0;
+  overflow: hidden;
+  display: block;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.preview__caption {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 11px;
+  color: var(--color-text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.code {
+  position: relative;
+  margin: 16px 0 0;
+  background: #18181b;
+  color: #fafafa;
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+.code pre { margin: 0; white-space: pre; }
+.code__copy {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #ffffff14;
+  color: #fafafa;
+  border: 0;
+  font-family: inherit;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.code__copy:hover { background: #ffffff29; }
+
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+.swatch {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--color-border-default);
+  font-size: 12px;
+}
+.swatch__chip { height: 64px; }
+.swatch__meta { padding: 8px 12px; background: var(--color-background-default); }
+.swatch__name { font-weight: 600; color: var(--color-text-default); }
+.swatch__var { color: var(--color-text-subtle); font-family: ui-monospace, Menlo, monospace; font-size: 11px; }
+
+.type-stack { width: 100%; display: flex; flex-direction: column; gap: 24px; }
+.type-stack__row { display: grid; grid-template-columns: 120px 1fr; align-items: baseline; gap: 24px; }
+.type-stack__label { font-size: 12px; color: var(--color-text-subtle); font-family: ui-monospace, Menlo, monospace; }
+
+@media (max-width: 960px) {
+  .layout { grid-template-columns: 1fr; padding: 16px; gap: 24px; }
+  .sidebar { position: static; max-height: none; }
+  .topbar { padding: 12px 16px; flex-wrap: wrap; }
+}
+
+/* === components.css === */
+/* components.css — PHPure components bound to component/* and semantic/* tokens. */
+
+/* ============ Button ============ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-label);
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 140ms ease, color 140ms ease, border-color 140ms ease;
+  white-space: nowrap;
+}
+.btn:focus-visible { outline: 2px solid var(--color-border-focus); outline-offset: 2px; }
+.btn[disabled], .btn[aria-disabled="true"] { cursor: not-allowed; pointer-events: none; }
+
+.btn--primary {
+  background: var(--button-primary-background-default);
+  color: var(--button-primary-content-default);
+  border-color: var(--button-primary-border-default);
+  border-radius: var(--button-primary-border-radius-default, var(--radius-pill));
+}
+.btn--primary:hover { background: var(--button-primary-background-hover); border-color: var(--button-primary-border-hover); color: var(--button-primary-content-hover); }
+.btn--primary:active { background: var(--button-primary-background-active); border-color: var(--button-primary-border-active); color: var(--button-primary-content-active); }
+.btn--primary:focus-visible { outline-color: var(--button-primary-border-focus); }
+.btn--primary[disabled], .btn--primary[aria-disabled="true"] {
+  background: var(--button-primary-background-disabled);
+  color: var(--button-primary-content-disabled);
+  border-color: var(--button-primary-border-disabled);
+}
+
+.btn--secondary {
+  background: var(--button-secondary-background-default);
+  color: var(--button-secondary-content-default);
+  border-color: var(--button-secondary-border-default);
+}
+.btn--secondary:hover { background: var(--button-secondary-background-hover); border-color: var(--button-secondary-border-hover); }
+.btn--secondary:active { background: var(--button-secondary-background-active); border-color: var(--button-secondary-border-active); }
+.btn--secondary:focus-visible { outline-color: var(--button-secondary-border-focus); }
+.btn--secondary[disabled], .btn--secondary[aria-disabled="true"] {
+  background: var(--button-secondary-background-disabled);
+  color: var(--button-secondary-content-disabled);
+  border-color: var(--button-secondary-border-disabled);
+}
+
+.btn--tertiary {
+  background: var(--button-tertiary-background-default);
+  color: var(--button-tertiary-content-default);
+  border-color: var(--button-tertiary-border-default);
+}
+.btn--tertiary:hover { background: var(--button-tertiary-background-hover); border-color: var(--button-tertiary-border-hover); }
+.btn--tertiary:active { background: var(--button-tertiary-background-active); border-color: var(--button-tertiary-border-active); }
+.btn--tertiary:focus-visible { outline-color: var(--button-tertiary-border-focus); }
+.btn--tertiary[disabled], .btn--tertiary[aria-disabled="true"] {
+  background: var(--button-tertiary-background-disabled);
+  color: var(--button-tertiary-content-disabled);
+  border-color: var(--button-tertiary-border-disabled);
+}
+
+/* knockout variant (use on dark/photo overlays) */
+.btn--knockout {
+  background: var(--color-background-default);
+  color: var(--color-text-default);
+  border-color: var(--color-background-default);
+}
+.btn--knockout:hover { background: var(--color-background-muted); border-color: var(--color-background-muted); }
+
+/* ============ Link ============ */
+.link { color: var(--link-content-default); text-decoration: underline; text-underline-offset: 3px; }
+.link:hover { color: var(--link-content-hover); }
+.link:active { color: var(--link-content-active); }
+.link:visited { color: var(--link-content-visited); }
+.link--knockout { color: var(--link-knockout-content-default); }
+.link--knockout:hover { color: var(--link-knockout-content-hover); }
+.link--knockout:active { color: var(--link-knockout-content-active); }
+.link--knockout:visited { color: var(--link-knockout-content-visited); }
+
+/* ============ Form ============ */
+.field { display: flex; flex-direction: column; gap: 6px; width: 100%; max-width: 360px; }
+.field__label { font-size: var(--font-size-label-sm); font-weight: var(--font-weight-label); color: var(--color-text-default); }
+.field__hint  { font-size: var(--font-size-meta-sm, 12px); color: var(--color-text-subtle); }
+
+.input, .textarea, .select {
+  width: 100%;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body);
+  color: var(--form-content-default);
+  background: var(--form-background-default);
+  border: 1px solid var(--form-border-default);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  line-height: 1.4;
+  transition: border-color 140ms ease;
+}
+.textarea { min-height: 96px; resize: vertical; }
+.input::placeholder, .textarea::placeholder { color: var(--color-text-placeholder); }
+.input:hover, .textarea:hover, .select:hover { border-color: var(--form-border-hover); }
+.input:focus, .textarea:focus, .select:focus {
+  outline: 2px solid var(--form-border-focus);
+  outline-offset: 1px;
+  border-color: var(--form-border-active);
+}
+.input[disabled], .textarea[disabled], .select[disabled] {
+  background: var(--form-background-disabled);
+  color: var(--form-content-disabled);
+  border-color: var(--form-border-disabled);
+  cursor: not-allowed;
+}
+
+.checkbox { display: inline-flex; align-items: center; gap: 8px; font-size: var(--font-size-label-sm); color: var(--color-text-default); }
+.checkbox input { accent-color: var(--color-text-brand); width: 16px; height: 16px; }
+
+/* ============ Tag / Swatch ============ */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: var(--color-background-brand-knockout);
+  color: var(--color-text-knockout);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-meta-sm, 12px);
+  font-weight: var(--font-weight-label);
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.tag--subtle { background: var(--color-background-brand-subtle); color: var(--color-text-accent); }
+.tag--strong { background: var(--color-background-brand-strong); color: var(--color-text-default); }
+
+/* ============ Card (base) ============ */
+.card {
+  background: var(--card-background-default);
+  color: var(--card-content-default);
+  border: 1px solid var(--card-border-default);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: background 140ms ease;
+  padding: var(--card-padding-vertical, 16px) var(--card-padding-horizontal, 16px);
+}
+.card:hover { background: var(--card-background-hover); }
+.card:focus-within { outline: 2px solid var(--card-border-focus); outline-offset: 2px; }
+.card__media {
+  width: 100%;
+  height: var(--card-image-height, 284px);
+  background: var(--color-background-muted);
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-md);
+}
+.card__body { padding-top: 16px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.card__title {
+  font-family: var(--typography-title-sm-font-family, var(--font-family-body));
+  font-weight: var(--typography-title-sm-font-weight, var(--font-weight-title));
+  font-size: var(--font-size-title-sm);
+  line-height: 1.25;
+  margin: 0;
+  color: var(--color-text-default);
+}
+.card__sub { font-family: var(--font-family-body); font-size: var(--font-size-body-sm); color: var(--color-text-subtle); margin: 0; }
+.card__price { font-weight: var(--font-weight-label); color: var(--color-text-default); font-size: var(--font-size-label); }
+.card__footer { display: flex; align-items: center; justify-content: space-between; margin-top: 12px; }
+
+/* product card — image is INSIDE the cream tile with rounded inner corners */
+.product-card { position: relative; }
+.product-card .product-card__tag { position: absolute; top: calc(var(--card-padding-vertical, 16px) + 12px); left: calc(var(--card-padding-horizontal, 16px) + 12px); z-index: 2; }
+
+/* ============ Category card / grid (2×2 hero-tile) ============ */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+.category {
+  position: relative;
+  aspect-ratio: 16 / 11;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-background-brand-subtle);
+  display: block;
+  text-decoration: none;
+  color: var(--color-text-knockout);
+}
+.category__img { width: 100%; height: 100%; object-fit: cover; transition: transform 400ms ease; }
+.category:hover .category__img { transform: scale(1.04); }
+.category::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 35%, rgba(0,0,0,0.55) 100%);
+}
+.category__label {
+  position: absolute; left: 24px; bottom: 20px; right: 24px;
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-headline-sm);
+  font-weight: var(--font-weight-heading);
+  line-height: 1.1;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  z-index: 2;
+}
+@media (max-width: 560px) { .category-grid { grid-template-columns: 1fr; } }
+
+/* ============ Site header (sticky on homepage) ============ */
+.site-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 40px; gap: 24px;
+  background: var(--color-background-default);
+  border-bottom: 1px solid var(--color-border-default);
+}
+.site-header__logo {
+  font-family: var(--font-family-logo);
+  font-size: var(--font-size-logo);
+  color: var(--color-text-brand);
+  font-weight: var(--font-weight-display);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+.site-header__nav { display: flex; gap: 28px; }
+.site-header__nav a {
+  color: var(--color-text-default);
+  text-decoration: none;
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-label);
+  position: relative;
+  padding-bottom: 2px;
+}
+.site-header__nav a.is-active { color: var(--color-text-brand); }
+.site-header__nav a.is-active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 2px; background: var(--color-text-brand); }
+.site-header__nav a:hover { color: var(--color-text-brand); }
+.site-header__actions { display: flex; gap: 12px; align-items: center; }
+.icon-btn { width: 40px; height: 40px; display: inline-grid; place-items: center; background: transparent; border: 0; border-radius: var(--radius-pill); cursor: pointer; color: var(--color-text-default); }
+.icon-btn:hover { background: var(--color-background-muted); }
+
+/* ============ Hero (single image w/ centered overlay) ============ */
+.hero {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  min-height: 560px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: var(--color-background-muted);
+  margin: 24px;
+}
+.hero__media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero__media--split { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 16px; }
+.hero__media--split img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg); display: block; }
+.hero__overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.45) 100%); }
+.hero__content {
+  position: relative;
+  z-index: 2;
+  padding: 32px;
+  max-width: 720px;
+  color: var(--color-text-knockout);
+}
+.hero__title {
+  font-family: var(--typography-display-font-family, var(--font-family-heading));
+  font-weight: var(--typography-display-font-weight, var(--font-weight-display));
+  font-size: var(--font-size-display);
+  line-height: 1.05;
+  letter-spacing: -1px;
+  margin: 0 0 16px;
+}
+.hero__sub { font-size: var(--font-size-body-lg); margin: 0 0 24px; opacity: 0.95; }
+.hero__actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+@media (max-width: 760px) { .hero { min-height: 480px; margin: 16px; } .hero__media--split { grid-template-columns: 1fr; } }
+
+/* ============ CTA banner — beige w/ photo split ============ */
+.cta-banner {
+  background: var(--color-background-brand-subtle);
+  color: var(--color-text-default);
+  border-radius: var(--radius-xl);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  overflow: hidden;
+  align-items: stretch;
+}
+.cta-banner__copy { padding: 64px 56px; display: flex; flex-direction: column; justify-content: center; gap: 16px; }
+.cta-banner__title { font-family: var(--font-family-heading); font-weight: var(--font-weight-heading); font-size: var(--font-size-headline); line-height: 1.05; margin: 0; }
+.cta-banner__desc  { font-size: var(--font-size-body); color: var(--color-text-subtle); margin: 0 0 8px; max-width: 44ch; }
+.cta-banner__form  { display: flex; gap: 8px; max-width: 480px; }
+.cta-banner__form .input { background: var(--color-background-default); }
+.cta-banner__media { background: var(--color-background-muted); position: relative; min-height: 360px; }
+.cta-banner__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 760px) {
+  .cta-banner { grid-template-columns: 1fr; }
+  .cta-banner__copy { padding: 40px 24px; }
+  .cta-banner__form { flex-direction: column; }
+}
+
+/* ============ Image CTA (full overlay) — used as final block ============ */
+.image-cta {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  min-height: 480px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: var(--color-text-knockout);
+  background: var(--color-background-brand-knockout);
+  margin: 0 24px;
+}
+.image-cta__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.55; }
+.image-cta__inner { position: relative; padding: 48px; max-width: 640px; z-index: 1; }
+.image-cta__title { font-family: var(--font-family-heading); font-size: var(--font-size-headline); font-weight: var(--font-weight-heading); line-height: 1.05; margin: 0 0 16px; letter-spacing: -0.5px; }
+.image-cta__desc  { font-size: var(--font-size-body-lg); margin: 0 0 24px; }
+
+/* ============ Testimonial / Review ============ */
+.testimonial {
+  background: var(--color-background-default);
+  padding: 24px 0;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 24px;
+  align-items: center;
+  max-width: 880px;
+  margin: 0 auto;
+}
+.testimonial__avatar { width: 60px; height: 60px; border-radius: var(--radius-pill); background: var(--color-background-muted); object-fit: cover; }
+.testimonial__quote { font-family: var(--font-family-body); font-size: var(--font-size-body-lg); line-height: 1.5; margin: 0; color: var(--color-text-default); }
+.testimonial__cite  { font-size: var(--font-size-meta-sm, 12px); color: var(--color-text-subtle); margin-top: 8px; }
+
+.review {
+  background: var(--color-background-default);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.review__stars  { color: var(--color-text-accent); letter-spacing: 2px; font-size: 16px; }
+.review__quote  { font-family: var(--font-family-body); font-weight: var(--font-weight-label); font-size: var(--font-size-label); margin: 0; line-height: 1.4; color: var(--color-text-default); }
+.review__author { font-size: var(--font-size-meta-sm, 12px); color: var(--color-text-subtle); }
+.review-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+@media (max-width: 760px) { .review-row { grid-template-columns: 1fr; } }
+
+/* ============ USPs strip — knockout dark green band ============ */
+.usps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  padding: 32px 48px;
+  background: var(--color-background-brand-knockout);
+  color: var(--color-text-knockout);
+}
+.usp { display: flex; align-items: center; gap: 16px; justify-content: center; }
+.usp__icon  { width: 32px; height: 32px; flex: 0 0 auto; color: var(--color-text-knockout); display: grid; place-items: center; }
+.usp__copy  { display: flex; flex-direction: column; gap: 2px; }
+.usp__title { font-size: var(--font-size-label); font-weight: var(--font-weight-label); }
+.usp__desc  { font-size: var(--font-size-meta-sm, 12px); opacity: 0.75; }
+@media (max-width: 760px) { .usps { grid-template-columns: 1fr; padding: 24px; } }
+
+/* ============ Story / blog card (split banner) ============ */
+.story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--color-background-brand-subtle);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  min-height: 440px;
+}
+.story__media { background: var(--color-background-muted); }
+.story__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.story__body { padding: 48px; display: flex; flex-direction: column; justify-content: center; gap: 16px; }
+.story__title { font-family: var(--font-family-heading); font-weight: var(--font-weight-heading); font-size: var(--font-size-headline-sm); line-height: 1.1; margin: 0; color: var(--color-text-default); }
+.story__excerpt { color: var(--color-text-subtle); margin: 0; font-size: var(--font-size-body); }
+.story__meta { display: flex; gap: 12px; font-size: var(--font-size-meta-sm, 12px); color: var(--color-text-subtle); text-transform: uppercase; letter-spacing: 0.5px; }
+@media (max-width: 760px) { .story { grid-template-columns: 1fr; min-height: auto; } .story__body { padding: 32px; } }
+
+/* small editorial story tiles (right column of "latest stories") */
+.story-tile { background: transparent; }
+.story-tile__img { width: 100%; aspect-ratio: 4/3; border-radius: var(--radius-md); object-fit: cover; background: var(--color-background-muted); display: block; }
+.story-tile__body { padding-top: 12px; display: flex; flex-direction: column; gap: 8px; }
+.story-tile__title { font-family: var(--font-family-heading); font-weight: var(--font-weight-heading); font-size: var(--font-size-title-sm); margin: 0; color: var(--color-text-default); line-height: 1.2; }
+
+/* ============ Footer ============ */
+.site-footer {
+  background: var(--color-background-brand-knockout);
+  color: var(--color-text-knockout);
+  padding: 56px 40px 24px;
+}
+.site-footer__cols {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(3, 1fr) 1fr;
+  gap: 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.site-footer__col h4 { font-family: var(--font-family-body); font-size: var(--font-size-label-sm); font-weight: var(--font-weight-label); margin: 0 0 12px; text-transform: uppercase; letter-spacing: 0.6px; opacity: 0.85; }
+.site-footer__col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.site-footer__col a { color: var(--link-knockout-content-default); text-decoration: none; font-size: var(--font-size-body-sm); }
+.site-footer__col a:hover { color: var(--link-knockout-content-hover); }
+.site-footer__brand { font-family: var(--font-family-logo); font-size: 28px; margin-bottom: 12px; }
+.site-footer__legal { display: flex; justify-content: space-between; padding-top: 16px; font-size: var(--font-size-meta-sm, 12px); opacity: 0.6; }
+@media (max-width: 760px) { .site-footer__cols { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .site-footer__cols { grid-template-columns: 1fr; } }
+
+/* ============ Video highlight (cinematic) ============ */
+.highlight {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  aspect-ratio: 21 / 9;
+  background: var(--color-background-muted);
+}
+.highlight__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.highlight__overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.55) 100%); }
+.highlight__play {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 88px; height: 88px; border-radius: var(--radius-pill);
+  background: var(--color-background-default); color: var(--color-text-brand);
+  display: grid; place-items: center; border: 0; cursor: pointer;
+  box-shadow: var(--shadow-default, 0 2px 8px rgba(0,0,0,.2));
+}
+.highlight__title { position: absolute; left: 40px; bottom: 32px; right: 40px; color: var(--color-text-knockout); font-family: var(--font-family-heading); font-size: var(--font-size-headline-sm); margin: 0; max-width: 60%; }
+
+/* ============ Section title pattern used on the homepage ============ */
+.section-title {
+  text-align: center;
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-heading);
+  font-size: var(--font-size-headline);
+  line-height: 1.1;
+  margin: 0 0 24px;
+  color: var(--color-text-default);
+  letter-spacing: -0.5px;
+}
+
+</style>
 </head>
 <body data-brand="golf">
 
@@ -50,7 +1244,7 @@
       <li><a href="#button">Button</a></li>
       <li><a href="#link">Link</a></li>
       <li><a href="#form">Form</a></li>
-      <li><a href="#tag">Tag / Swatch</a></li>
+      <li><a href="#tag">Tag</a></li>
       <li><a href="#card">Card</a></li>
       <li><a href="#product-card">Product card</a></li>
       <li><a href="#category-card">Category card</a></li>
@@ -62,7 +1256,7 @@
       <li><a href="#cta-banner">CTA banner</a></li>
       <li><a href="#image-cta">Image CTA</a></li>
       <li><a href="#testimonial">Testimonial</a></li>
-      <li><a href="#review">Review card</a></li>
+      <li><a href="#review">Review row</a></li>
       <li><a href="#usps">USPs strip</a></li>
       <li><a href="#story">Story card</a></li>
       <li><a href="#highlight">Video highlight</a></li>
@@ -97,9 +1291,7 @@
         <p class="doc__desc">Semantic background, text, and border tokens. Bound to <code>--color-*</code> CSS custom properties and updated automatically when the brand changes.</p>
       </div>
       <div class="preview">
-        <div class="swatch-grid" id="color-swatches">
-          <!-- populated by script -->
-        </div>
+        <div class="swatch-grid" id="color-swatches"></div>
       </div>
     </section>
 
@@ -119,12 +1311,14 @@
           <div class="type-stack__row"><span class="type-stack__label">.text-title-lg</span><span class="text-title-lg">Title LG</span></div>
           <div class="type-stack__row"><span class="type-stack__label">.text-title</span><span class="text-title">Title</span></div>
           <div class="type-stack__row"><span class="type-stack__label">.text-title-sm</span><span class="text-title-sm">Title SM</span></div>
-          <div class="type-stack__row"><span class="type-stack__label">.text-body-lg</span><span class="text-body-lg">Body LG — the quick brown fox jumps over the lazy dog.</span></div>
+          <div class="type-stack__row"><span class="type-stack__label">.text-body-lg</span><span class="text-body-lg">Body LG — the quick brown fox.</span></div>
           <div class="type-stack__row"><span class="type-stack__label">.text-body</span><span class="text-body">Body — the quick brown fox jumps over the lazy dog.</span></div>
           <div class="type-stack__row"><span class="type-stack__label">.text-body-sm</span><span class="text-body-sm">Body SM — the quick brown fox jumps over the lazy dog.</span></div>
           <div class="type-stack__row"><span class="type-stack__label">.text-label-lg</span><span class="text-label-lg">Label LG</span></div>
           <div class="type-stack__row"><span class="type-stack__label">.text-label</span><span class="text-label">Label</span></div>
           <div class="type-stack__row"><span class="type-stack__label">.text-label-sm</span><span class="text-label-sm">Label SM</span></div>
+          <div class="type-stack__row"><span class="type-stack__label">.text-meta</span><span class="text-meta">Meta — used for tags, captions, and meta text.</span></div>
+          <div class="type-stack__row"><span class="type-stack__label">.text-meta-sm</span><span class="text-meta-sm">Meta SM — 12px, fine print.</span></div>
           <div class="type-stack__row"><span class="type-stack__label">.text-logo</span><span class="text-logo">PHPure</span></div>
         </div>
       </div>
@@ -135,7 +1329,7 @@
       <div class="doc__header">
         <div class="doc__eyebrow">Foundations</div>
         <h2 class="doc__title">Spacing</h2>
-        <p class="doc__desc">Semantic spacing scale — <code>--spacing-2xs</code> through <code>--spacing-3xl</code>.</p>
+        <p class="doc__desc">Semantic spacing scale.</p>
       </div>
       <div class="preview">
         <div style="display:flex; flex-direction:column; gap:8px; width:100%;">
@@ -156,7 +1350,7 @@
       <div class="doc__header">
         <div class="doc__eyebrow">Foundations</div>
         <h2 class="doc__title">Radius</h2>
-        <p class="doc__desc">Semantic radius scale. Notice how the same tokens produce visibly different shapes under each brand — Mini-golf has tighter radii than Golf.</p>
+        <p class="doc__desc">Semantic radius scale.</p>
       </div>
       <div class="preview">
         <div style="display:flex; gap:24px; flex-wrap:wrap;">
@@ -189,7 +1383,7 @@
       <div class="doc__header">
         <div class="doc__eyebrow">Component</div>
         <h2 class="doc__title">Button</h2>
-        <p class="doc__desc">Three variants — primary, secondary, tertiary — each with default, hover, active, disabled, and focus states. Bound to <code>--button-{variant}-{slot}-{state}</code>.</p>
+        <p class="doc__desc">Three variants — primary, secondary, tertiary — each with default, hover, active, disabled, focus. Bound to <code>--button-{variant}-{slot}-{state}</code>. Primary's radius is brand-specific (pill on Golf, rounded rectangle on Mini-Golf).</p>
       </div>
       <div class="preview">
         <button class="btn btn--primary">Shop now</button>
@@ -208,16 +1402,14 @@
       <div class="doc__header">
         <div class="doc__eyebrow">Component</div>
         <h2 class="doc__title">Link</h2>
-        <p class="doc__desc">Standard text links and knockout links for dark backgrounds.</p>
+        <p class="doc__desc">Standard and knockout-for-dark-surfaces variants.</p>
       </div>
       <div class="preview" style="flex-direction: column; align-items: flex-start;">
-        <p style="margin:0">Inline links use <a href="#" class="link">the primary brand color</a> and follow underline-on-default with hover and visited states.</p>
+        <p style="margin:0">Inline links use <a href="#" class="link">the primary brand color</a> with hover, active, visited states.</p>
         <div style="background: var(--color-background-brand-knockout); padding: 24px; border-radius: var(--radius-md); width: 100%; color: var(--color-text-knockout);">
-          On a dark surface, use <a href="#" class="link link--knockout">the knockout link variant</a> instead.
+          On a dark surface, use <a href="#" class="link link--knockout">the knockout link variant</a>.
         </div>
       </div>
-      <div class="code"><button class="code__copy" data-copy>Copy</button><pre>&lt;a href="#" class="link"&gt;Standard link&lt;/a&gt;
-&lt;a href="#" class="link link--knockout"&gt;Knockout link&lt;/a&gt;</pre></div>
     </section>
 
     <!-- FORM -->
@@ -225,39 +1417,29 @@
       <div class="doc__header">
         <div class="doc__eyebrow">Component</div>
         <h2 class="doc__title">Form</h2>
-        <p class="doc__desc">Text input, textarea, select, checkbox. Bound to <code>--form-*</code> with focus ring on <code>--form-border-focus</code>.</p>
+        <p class="doc__desc">Input, textarea, select, checkbox. Bound to <code>--form-*</code>.</p>
       </div>
       <div class="preview" style="flex-direction:column; align-items:flex-start; gap:20px;">
         <label class="field"><span class="field__label">Email address</span><input class="input" type="email" placeholder="you@example.com" /><span class="field__hint">We'll never share your email.</span></label>
         <label class="field"><span class="field__label">Message</span><textarea class="textarea" placeholder="Tell us about your golf setup…"></textarea></label>
-        <label class="field"><span class="field__label">Handedness</span>
-          <select class="select"><option>Right-handed</option><option>Left-handed</option></select>
-        </label>
+        <label class="field"><span class="field__label">Handedness</span><select class="select"><option>Right-handed</option><option>Left-handed</option></select></label>
         <label class="field"><span class="field__label">Disabled</span><input class="input" disabled value="Read-only" /></label>
         <label class="checkbox"><input type="checkbox" checked />Subscribe to the inner circle newsletter</label>
       </div>
-      <div class="code"><button class="code__copy" data-copy>Copy</button><pre>&lt;label class="field"&gt;
-  &lt;span class="field__label"&gt;Email address&lt;/span&gt;
-  &lt;input class="input" type="email" placeholder="you@example.com" /&gt;
-  &lt;span class="field__hint"&gt;We'll never share your email.&lt;/span&gt;
-&lt;/label&gt;</pre></div>
     </section>
 
     <!-- TAG -->
     <section class="doc" id="tag">
       <div class="doc__header">
         <div class="doc__eyebrow">Component</div>
-        <h2 class="doc__title">Tag / Swatch</h2>
-        <p class="doc__desc">Small pill labels for category, status, and badge use. Three surface variants.</p>
+        <h2 class="doc__title">Tag</h2>
+        <p class="doc__desc">Pill labels for category, status, badge.</p>
       </div>
       <div class="preview">
         <span class="tag">New arrival</span>
+        <span class="tag tag--subtle">Editor's pick</span>
         <span class="tag tag--strong">Limited</span>
-        <span class="tag tag--knockout">Members</span>
       </div>
-      <div class="code"><button class="code__copy" data-copy>Copy</button><pre>&lt;span class="tag"&gt;New arrival&lt;/span&gt;
-&lt;span class="tag tag--strong"&gt;Limited&lt;/span&gt;
-&lt;span class="tag tag--knockout"&gt;Members&lt;/span&gt;</pre></div>
     </section>
 
     <!-- CARD -->
@@ -265,26 +1447,17 @@
       <div class="doc__header">
         <div class="doc__eyebrow">Component</div>
         <h2 class="doc__title">Card</h2>
-        <p class="doc__desc">Base card with media, body, optional title and footer.</p>
+        <p class="doc__desc">Base card with image inside the cream tile (per <code>--card-padding-*</code> and <code>--card-image-height</code>).</p>
       </div>
       <div class="preview">
-        <article class="card" style="max-width: 320px;">
+        <article class="card" style="max-width: 300px;">
           <img class="card__media" src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=600&q=60" alt="" />
           <div class="card__body">
             <h3 class="card__title">Sunrise rounds</h3>
-            <p style="margin:0; color: var(--color-text-subtle);">A quick read on the calm of the first tee at 6am.</p>
-            <a href="#" class="link" style="margin-top: 8px;">Read story</a>
+            <p class="card__sub">A quick read on the calm of the first tee at 6am.</p>
           </div>
         </article>
       </div>
-      <div class="code"><button class="code__copy" data-copy>Copy</button><pre>&lt;article class="card"&gt;
-  &lt;img class="card__media" src="…" alt="" /&gt;
-  &lt;div class="card__body"&gt;
-    &lt;h3 class="card__title"&gt;Sunrise rounds&lt;/h3&gt;
-    &lt;p&gt;A quick read on the calm of the first tee at 6am.&lt;/p&gt;
-    &lt;a class="link" href="#"&gt;Read story&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/article&gt;</pre></div>
     </section>
 
     <!-- PRODUCT CARD -->
@@ -292,80 +1465,53 @@
       <div class="doc__header">
         <div class="doc__eyebrow">Component</div>
         <h2 class="doc__title">Product card</h2>
-        <p class="doc__desc">PLP item with image, optional tag, title, subtitle, and price. Used on the bestsellers row.</p>
+        <p class="doc__desc">Bestsellers tile: cream surface, padded image with inner rounding, optional tag floating over the image.</p>
       </div>
-      <div class="preview">
+      <div class="preview" style="gap: 16px;">
         <article class="card product-card" style="max-width: 240px;">
-          <span class="tag">New</span>
+          <span class="tag product-card__tag">New</span>
           <img class="card__media" src="https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?auto=format&fit=crop&w=400&q=60" alt="" />
           <div class="card__body">
-            <h3 class="card__title text-title-sm" style="font-size: var(--font-size-title-sm)">Putter 01</h3>
-            <p class="product-card__sub">Tour-weight, matte</p>
-            <div class="product-card__footer">
-              <span class="card__price">€249</span>
-              <button class="btn btn--tertiary" style="padding: 6px 12px; font-size: 13px;">Add</button>
-            </div>
+            <h3 class="card__title">Putter 01</h3>
+            <p class="card__sub">Tour-weight, matte</p>
+            <div class="card__footer"><span class="card__price">€249</span></div>
           </div>
         </article>
         <article class="card product-card" style="max-width: 240px;">
-          <span class="tag tag--strong">Limited</span>
+          <span class="tag tag--subtle product-card__tag">Limited</span>
           <img class="card__media" src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=400&q=60" alt="" />
           <div class="card__body">
-            <h3 class="card__title text-title-sm" style="font-size: var(--font-size-title-sm)">Polo · Heather</h3>
-            <p class="product-card__sub">Pima cotton, slim fit</p>
-            <div class="product-card__footer">
-              <span class="card__price">€89</span>
-              <button class="btn btn--tertiary" style="padding: 6px 12px; font-size: 13px;">Add</button>
-            </div>
+            <h3 class="card__title">Polo · Heather</h3>
+            <p class="card__sub">Pima cotton</p>
+            <div class="card__footer"><span class="card__price">€89</span></div>
           </div>
         </article>
         <article class="card product-card" style="max-width: 240px;">
           <img class="card__media" src="https://images.unsplash.com/photo-1611374243371-1e95da0f8d92?auto=format&fit=crop&w=400&q=60" alt="" />
           <div class="card__body">
-            <h3 class="card__title text-title-sm" style="font-size: var(--font-size-title-sm)">Glove · Lambskin</h3>
-            <p class="product-card__sub">Tour-grade leather</p>
-            <div class="product-card__footer">
-              <span class="card__price">€34</span>
-              <button class="btn btn--tertiary" style="padding: 6px 12px; font-size: 13px;">Add</button>
-            </div>
+            <h3 class="card__title">Glove · Lambskin</h3>
+            <p class="card__sub">Tour-grade leather</p>
+            <div class="card__footer"><span class="card__price">€34</span></div>
           </div>
         </article>
       </div>
-      <div class="code"><button class="code__copy" data-copy>Copy</button><pre>&lt;article class="card product-card"&gt;
-  &lt;span class="tag"&gt;New&lt;/span&gt;
-  &lt;img class="card__media" src="…" alt="" /&gt;
-  &lt;div class="card__body"&gt;
-    &lt;h3 class="card__title"&gt;Putter 01&lt;/h3&gt;
-    &lt;p class="product-card__sub"&gt;Tour-weight, matte&lt;/p&gt;
-    &lt;div class="product-card__footer"&gt;
-      &lt;span class="card__price"&gt;€249&lt;/span&gt;
-      &lt;button class="btn btn--tertiary"&gt;Add&lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/article&gt;</pre></div>
     </section>
 
     <!-- CATEGORY CARD -->
     <section class="doc" id="category-card">
       <div class="doc__header">
         <div class="doc__eyebrow">Component</div>
-        <h2 class="doc__title">Category card / grid</h2>
-        <p class="doc__desc">Square-ish image tiles with a knockout label, used on the Shop-by-category section.</p>
+        <h2 class="doc__title">Category card · 2×2 grid</h2>
+        <p class="doc__desc">Hero-style image tiles with a knockout label, on the homepage's "Shop by category" row.</p>
       </div>
       <div class="preview">
         <div class="category-grid">
-          <a href="#" class="category"><img class="category__img" src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=500&q=60" alt="" /><span class="category__label">Clubs</span></a>
-          <a href="#" class="category"><img class="category__img" src="https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?auto=format&fit=crop&w=500&q=60" alt="" /><span class="category__label">Apparel</span></a>
-          <a href="#" class="category"><img class="category__img" src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=500&q=60" alt="" /><span class="category__label">Bags</span></a>
-          <a href="#" class="category"><img class="category__img" src="https://images.unsplash.com/photo-1611374243371-1e95da0f8d92?auto=format&fit=crop&w=500&q=60" alt="" /><span class="category__label">Balls</span></a>
+          <a href="#" class="category"><img class="category__img" src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=900&q=60" alt="" /><span class="category__label">Clubs</span></a>
+          <a href="#" class="category"><img class="category__img" src="https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?auto=format&fit=crop&w=900&q=60" alt="" /><span class="category__label">Golfbags</span></a>
+          <a href="#" class="category"><img class="category__img" src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=900&q=60" alt="" /><span class="category__label">Gloves</span></a>
+          <a href="#" class="category"><img class="category__img" src="https://images.unsplash.com/photo-1611374243371-1e95da0f8d92?auto=format&fit=crop&w=900&q=60" alt="" /><span class="category__label">Polo's</span></a>
         </div>
       </div>
-      <div class="code"><button class="code__copy" data-copy>Copy</button><pre>&lt;div class="category-grid"&gt;
-  &lt;a href="#" class="category"&gt;
-    &lt;img class="category__img" src="…" alt="" /&gt;
-    &lt;span class="category__label"&gt;Clubs&lt;/span&gt;
-  &lt;/a&gt;
-&lt;/div&gt;</pre></div>
     </section>
 
     <!-- ========== BLOCKS ========== -->
@@ -376,17 +1522,18 @@
       <div class="doc__header">
         <div class="doc__eyebrow">Block</div>
         <h2 class="doc__title">Header</h2>
-        <p class="doc__desc">Stacked site header with logo, primary nav, and utility icons.</p>
+        <p class="doc__desc">Site header with logo, primary nav (active state on current section), utility icons.</p>
       </div>
       <div class="preview preview--full">
         <header class="site-header">
           <a class="site-header__logo" href="#">PHPure</a>
           <nav class="site-header__nav">
-            <a href="#">Bestsellers</a>
-            <a href="#">Clubs</a>
-            <a href="#">Apparel</a>
-            <a href="#">Stories</a>
-            <a href="#">About</a>
+            <a href="#">New arrivals</a>
+            <a href="#" class="is-active">Women</a>
+            <a href="#">Men</a>
+            <a href="#">Gear</a>
+            <a href="#">Training</a>
+            <a href="#">Sale</a>
           </nav>
           <div class="site-header__actions">
             <button class="icon-btn" aria-label="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>
@@ -402,18 +1549,20 @@
       <div class="doc__header">
         <div class="doc__eyebrow">Block</div>
         <h2 class="doc__title">Hero</h2>
-        <p class="doc__desc">Above-the-fold split-photo hero with a centered title and CTA.</p>
+        <p class="doc__desc">Edge-to-edge hero with two photos and a centered title + CTA. The text uses the <code>display</code> composite style.</p>
       </div>
       <div class="preview preview--full">
         <div class="hero">
-          <div class="hero__media"><img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=900&q=70" alt="" /></div>
-          <div class="hero__media"><img src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=900&q=70" alt="" /></div>
+          <div class="hero__media--split">
+            <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=70" alt="" />
+            <img src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1200&q=70" alt="" />
+          </div>
+          <div class="hero__overlay"></div>
           <div class="hero__content">
             <h1 class="hero__title">The passion.<br/>The lifestyle.</h1>
             <p class="hero__sub">Made for the long game.</p>
             <div class="hero__actions">
-              <a href="#" class="btn btn--primary">Shop now</a>
-              <a href="#" class="btn btn--tertiary" style="color: var(--color-text-knockout); border-color: var(--color-border-knockout);">Watch the film</a>
+              <a href="#" class="btn btn--primary">Discover our new products</a>
             </div>
           </div>
         </div>
@@ -425,18 +1574,22 @@
       <div class="doc__header">
         <div class="doc__eyebrow">Block</div>
         <h2 class="doc__title">CTA banner</h2>
-        <p class="doc__desc">Knockout banner with a copy-block and an inline newsletter form.</p>
+        <p class="doc__desc">Brand-subtle (champagne) surface with copy on the left and a photo on the right. Used for the "Join the inner circle" newsletter.</p>
       </div>
       <div class="preview preview--full">
         <div class="cta-banner">
-          <div>
+          <div class="cta-banner__copy">
             <h3 class="cta-banner__title">Join the inner circle.</h3>
-            <p class="cta-banner__desc">First-look drops, member events, and the occasional well-kept tip. No noise, ever.</p>
+            <p class="cta-banner__desc">Be part of the PHPure Golf Community and unlock exclusive benefits.</p>
+            <form class="cta-banner__form" onsubmit="event.preventDefault()">
+              <input class="input" type="email" placeholder="Sign up for our monthly newsletter" />
+              <button class="btn btn--primary" aria-label="Subscribe">→</button>
+            </form>
+            <p class="card__sub" style="font-size: 12px; margin-top: 8px;">When you sign up for our emails you will receive marketing and learn more about us in our privacy policy.</p>
           </div>
-          <form class="cta-banner__form" onsubmit="event.preventDefault()">
-            <input class="input" type="email" placeholder="you@example.com" />
-            <button class="btn btn--primary" style="background: var(--color-background-default); color: var(--color-text-default); border-color: var(--color-background-default);">Subscribe</button>
-          </form>
+          <div class="cta-banner__media">
+            <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=70" alt="" />
+          </div>
         </div>
       </div>
     </section>
@@ -446,15 +1599,15 @@
       <div class="doc__header">
         <div class="doc__eyebrow">Block</div>
         <h2 class="doc__title">Image CTA</h2>
-        <p class="doc__desc">Full-bleed image with an overlay headline and CTA — used to close the homepage.</p>
+        <p class="doc__desc">Full-bleed image with an overlay headline + CTA. Closes the homepage.</p>
       </div>
       <div class="preview preview--full">
         <div class="image-cta">
           <img class="image-cta__bg" src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1600&q=70" alt="" />
           <div class="image-cta__inner">
-            <h3 class="image-cta__title">Find your line.</h3>
-            <p class="image-cta__desc">Step into the new season collection — built for the way you actually play.</p>
-            <a href="#" class="btn btn--primary">Explore the collection</a>
+            <h3 class="image-cta__title">PHPure Golf</h3>
+            <p class="image-cta__desc">We bring you premium gear and apparel for golfers who value precision and performance. Since 1984.</p>
+            <a href="#" class="btn btn--knockout">Learn more</a>
           </div>
         </div>
       </div>
@@ -465,18 +1618,15 @@
       <div class="doc__header">
         <div class="doc__eyebrow">Block</div>
         <h2 class="doc__title">Testimonial</h2>
-        <p class="doc__desc">Editorial pull-quote with portrait, on a brand-subtle surface.</p>
+        <p class="doc__desc">Single editorial quote with avatar — small inline format.</p>
       </div>
       <div class="preview preview--full">
         <div class="testimonial">
+          <img class="testimonial__avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=70" alt="" />
           <div>
-            <p class="testimonial__quote">"The gear is excellent, but it's the attention to the little things — the bag tag, the cover, the unboxing — that made me come back."</p>
-            <div class="testimonial__cite">
-              <span style="font-weight: 700;">Mara Lindqvist</span>
-              <span>Member since 2023</span>
-            </div>
+            <p class="testimonial__quote">"This online sportswear store exceeded all my expectations with their exceptional quality, extensive variety, impeccable customer service, and seamless shopping experience."</p>
+            <p class="testimonial__cite"><strong>Louis Peterson</strong> · Awesome Company</p>
           </div>
-          <img class="testimonial__avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=70" alt="" />
         </div>
       </div>
     </section>
@@ -485,26 +1635,28 @@
     <section class="doc" id="review">
       <div class="doc__header">
         <div class="doc__eyebrow">Block</div>
-        <h2 class="doc__title">Review card</h2>
-        <p class="doc__desc">Short customer quote on a neutral surface. Used in a row on the homepage.</p>
+        <h2 class="doc__title">Review row</h2>
+        <p class="doc__desc">Two side-by-side customer reviews. Sits below an editorial section title ("Hear it from our customers").</p>
       </div>
-      <div class="preview" style="gap: 24px;">
-        <article class="review" style="max-width: 360px;">
-          <span class="review__stars" aria-label="5 out of 5">★★★★★</span>
-          <p class="review__quote">"Best putter I've ever owned — and the support after my switch was unreal."</p>
-          <span class="review__author">— Jonas R., verified buyer</span>
-        </article>
-        <article class="review" style="max-width: 360px;">
-          <span class="review__stars" aria-label="5 out of 5">★★★★★</span>
-          <p class="review__quote">"Delivery in 36h, and the packaging alone made it feel like a gift."</p>
-          <span class="review__author">— Elise D., verified buyer</span>
-        </article>
+      <div class="preview preview--full">
+        <div style="padding: 24px 0;">
+          <h3 class="section-title">Hear it from our customers</h3>
+          <div class="review-row">
+            <article class="review">
+              <span class="review__stars" aria-label="5 out of 5">★★★★★</span>
+              <p class="review__quote">"I win everything since I have my club."</p>
+              <p class="card__sub" style="margin: 4px 0 0;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras placerat nisl nec justo sollicitudin. Suspendisse iaculis et nibh aliquet euismod.</p>
+              <span class="review__author">— Review by John · 16/12/2025</span>
+            </article>
+            <article class="review">
+              <span class="review__stars" aria-label="5 out of 5">★★★★★</span>
+              <p class="review__quote">"I win everything since I have my club."</p>
+              <p class="card__sub" style="margin: 4px 0 0;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras placerat nisl nec justo sollicitudin. Suspendisse iaculis et nibh aliquet euismod.</p>
+              <span class="review__author">— Review by John · 16/12/2025</span>
+            </article>
+          </div>
+        </div>
       </div>
-      <div class="code"><button class="code__copy" data-copy>Copy</button><pre>&lt;article class="review"&gt;
-  &lt;span class="review__stars" aria-label="5 out of 5"&gt;★★★★★&lt;/span&gt;
-  &lt;p class="review__quote"&gt;"Best putter I've ever owned…"&lt;/p&gt;
-  &lt;span class="review__author"&gt;— Jonas R., verified buyer&lt;/span&gt;
-&lt;/article&gt;</pre></div>
     </section>
 
     <!-- USPs -->
@@ -512,14 +1664,22 @@
       <div class="doc__header">
         <div class="doc__eyebrow">Block</div>
         <h2 class="doc__title">USPs strip</h2>
-        <p class="doc__desc">Four-up trust-builder strip — collapses to 2 then 1 column at breakpoints.</p>
+        <p class="doc__desc">Knockout band sitting under the editorial sections — three trust-builder items in a row.</p>
       </div>
       <div class="preview preview--full">
         <div class="usps">
-          <div class="usp"><div class="usp__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h13l5 5v5h-3"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></div><div class="usp__title">Free shipping</div><div class="usp__desc">On orders over €100</div></div>
-          <div class="usp"><div class="usp__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a4 4 0 0 1-4 4H7l-4 3V6a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg></div><div class="usp__title">Expert support</div><div class="usp__desc">PGA-trained staff</div></div>
-          <div class="usp"><div class="usp__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div><div class="usp__title">100-day returns</div><div class="usp__desc">No questions asked</div></div>
-          <div class="usp"><div class="usp__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/></svg></div><div class="usp__title">Lifetime fitting</div><div class="usp__desc">Refit your clubs anytime</div></div>
+          <div class="usp">
+            <div class="usp__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/></svg></div>
+            <div class="usp__copy"><div class="usp__title">Safe and secure</div><div class="usp__desc">Buy with confidence knowing your orders are safe and secure with our advanced security measures.</div></div>
+          </div>
+          <div class="usp">
+            <div class="usp__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h13l5 5v5h-3"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></div>
+            <div class="usp__copy"><div class="usp__title">Free shipping</div><div class="usp__desc">Enjoy the convenience of free shipping on all orders, making it even easier to get your favorite sportswear delivered to your door.</div></div>
+          </div>
+          <div class="usp">
+            <div class="usp__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 12V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12"/><path d="m16 16 4 4"/><path d="M8 8h8M8 12h4"/></svg></div>
+            <div class="usp__copy"><div class="usp__title">Amazing gift-wrapping</div><div class="usp__desc">Elevate your gifting experience with our amazing gift-wrapping service, adding a touch of elegance to every present.</div></div>
+          </div>
         </div>
       </div>
     </section>
@@ -529,19 +1689,17 @@
       <div class="doc__header">
         <div class="doc__eyebrow">Block</div>
         <h2 class="doc__title">Story card</h2>
-        <p class="doc__desc">Editorial split-view used on the "Latest stories" row.</p>
+        <p class="doc__desc">Split-view editorial used on the "Latest stories" row.</p>
       </div>
       <div class="preview preview--full">
         <article class="story">
           <div class="story__media"><img src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=900&q=70" alt="" /></div>
           <div class="story__body">
-            <span class="tag">Inside PHPure</span>
-            <h3 class="story__title">A weekend on the Algarve, club in hand.</h3>
+            <span class="tag tag--subtle">Innovation</span>
+            <h3 class="story__title">Hit the court in style.</h3>
             <p class="story__excerpt">Three days, three courses, one lesson on patience. Notes from the coast.</p>
-            <div class="story__meta">
-              <span>Apr 12 · 2025</span><span>·</span><span>4 min read</span>
-            </div>
-            <a href="#" class="btn btn--tertiary" style="align-self: flex-start;">Read story</a>
+            <div class="story__meta"><span>Golf trends 2025</span></div>
+            <a href="#" class="btn btn--tertiary" style="align-self: flex-start;">Read more</a>
           </div>
         </article>
       </div>
@@ -552,7 +1710,7 @@
       <div class="doc__header">
         <div class="doc__eyebrow">Block</div>
         <h2 class="doc__title">Video highlight</h2>
-        <p class="doc__desc">Cinematic 21:9 panel with a play button, overlay, and title.</p>
+        <p class="doc__desc">Cinematic 21:9 panel with overlay + play button.</p>
       </div>
       <div class="preview preview--full">
         <div class="highlight">
@@ -569,31 +1727,22 @@
       <div class="doc__header">
         <div class="doc__eyebrow">Block</div>
         <h2 class="doc__title">Footer</h2>
-        <p class="doc__desc">Four-column footer with the brand block + three groups of links and a legal strip.</p>
+        <p class="doc__desc">Knockout footer, four columns + a wide brand block.</p>
       </div>
       <div class="preview preview--full">
         <footer class="site-footer">
           <div class="site-footer__cols">
             <div class="site-footer__col">
               <div class="site-footer__brand">PHPure</div>
-              <p style="margin:0; opacity: 0.7; font-size: var(--font-size-body-sm);">The passion. The lifestyle. Made for the long game.</p>
+              <p style="margin:0; opacity: 0.7; font-size: 13px;">The passion. The lifestyle.<br/>Made for the long game.</p>
             </div>
-            <div class="site-footer__col">
-              <h4>Shop</h4>
-              <ul><li><a href="#">Clubs</a></li><li><a href="#">Apparel</a></li><li><a href="#">Bags</a></li><li><a href="#">Balls</a></li></ul>
-            </div>
-            <div class="site-footer__col">
-              <h4>Support</h4>
-              <ul><li><a href="#">Contact</a></li><li><a href="#">Returns</a></li><li><a href="#">Shipping</a></li><li><a href="#">FAQ</a></li></ul>
-            </div>
-            <div class="site-footer__col">
-              <h4>Company</h4>
-              <ul><li><a href="#">About</a></li><li><a href="#">Stories</a></li><li><a href="#">Press</a></li><li><a href="#">Careers</a></li></ul>
-            </div>
+            <div class="site-footer__col"><h4>Customer service</h4><ul><li><a href="#">Orders</a></li><li><a href="#">Returns</a></li><li><a href="#">My account</a></li><li><a href="#">General information</a></li><li><a href="#">Gift cards</a></li><li><a href="#">Payments</a></li><li><a href="#">Contact</a></li></ul></div>
+            <div class="site-footer__col"><h4>Our company</h4><ul><li><a href="#">About us</a></li><li><a href="#">Blog</a></li><li><a href="#">Our stores</a></li><li><a href="#">Sustainability</a></li></ul></div>
+            <div class="site-footer__col"><h4>My account</h4><ul><li><a href="#">My account</a></li><li><a href="#">My orders</a></li></ul></div>
           </div>
           <div class="site-footer__legal">
             <span>© 2025 PHPure</span>
-            <span>Privacy · Terms</span>
+            <span>Terms &amp; conditions · Privacy policy</span>
           </div>
         </footer>
       </div>
@@ -607,8 +1756,7 @@
   const root = document.body;
   document.querySelectorAll('[data-brand-toggle]').forEach(btn => {
     btn.addEventListener('click', () => {
-      const brand = btn.dataset.brandToggle;
-      root.dataset.brand = brand;
+      root.dataset.brand = btn.dataset.brandToggle;
       document.querySelectorAll('[data-brand-toggle]').forEach(b => b.setAttribute('aria-pressed', b === btn));
     });
   });
@@ -645,7 +1793,7 @@
   }, { rootMargin: '-30% 0px -60% 0px' });
   document.querySelectorAll('section.doc').forEach(s => obs.observe(s));
 
-  // ---- color swatches: enumerate --color-* on :root ----
+  // ---- color swatches ----
   const swatchHost = document.getElementById('color-swatches');
   const SWATCHES = [
     'background-default', 'background-muted', 'background-muted-soft',
@@ -663,17 +1811,11 @@
       const val = styles.getPropertyValue(cssVar).trim() || '—';
       const node = document.createElement('div');
       node.className = 'swatch';
-      node.innerHTML = `
-        <div class="swatch__chip" style="background:${val}"></div>
-        <div class="swatch__meta">
-          <div class="swatch__name">${name}</div>
-          <div class="swatch__var">${val}</div>
-        </div>`;
+      node.innerHTML = `<div class="swatch__chip" style="background:${val}"></div><div class="swatch__meta"><div class="swatch__name">${name}</div><div class="swatch__var">${val}</div></div>`;
       swatchHost.appendChild(node);
     });
   }
   paintSwatches();
-  // re-paint when brand changes
   new MutationObserver(paintSwatches).observe(document.body, { attributes: true, attributeFilter: ['data-brand'] });
 </script>
 </body>
