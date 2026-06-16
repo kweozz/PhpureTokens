@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PHPure · Homepage</title>
+  <meta name="description" content="PHPure homepage built from the multi-brand token set. Toggle golf ↔ mini-golf to swap styling, copy and imagery live." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&family=Fredoka:wght@400;500;600;700&family=Jost:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="components.css" />
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body data-brand="golf">
+
+  <div class="brandbar" role="group" aria-label="Brand">
+    <button data-brand-toggle="golf" aria-pressed="true">Golf</button>
+    <button data-brand-toggle="mini-golf" aria-pressed="false">Mini-golf</button>
+  </div>
+
+  <!-- HEADER -->
+  <header class="home-header">
+    <a class="home-header__logo" href="#" data-bind="brandName">PHPure</a>
+    <nav class="home-header__nav" data-nav></nav>
+    <div class="home-header__actions">
+      <button class="icon-btn" aria-label="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>
+      <button class="icon-btn" aria-label="Account"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></button>
+      <button class="icon-btn" aria-label="Cart"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h2l3 13h12l2-9H6"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg></button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="home-hero">
+    <div class="home-hero__split">
+      <img data-img="heroLeft" alt="" />
+      <img data-img="heroRight" alt="" />
+    </div>
+    <div class="home-hero__overlay"></div>
+    <div class="home-hero__content">
+      <h1 class="home-hero__title" data-bind="hero.title">The passion. The lifestyle</h1>
+      <a href="#" class="btn btn--primary" data-bind="hero.cta">Discover our new products</a>
+    </div>
+    <button class="home-hero__pause" aria-label="Pause"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg></button>
+  </section>
+
+  <!-- BESTSELLERS -->
+  <section class="section container">
+    <h2 class="section-heading" data-bind="bestsellers.title">Our bestsellers</h2>
+    <div class="home-products" data-products></div>
+    <div class="center-cta"><a href="#" class="btn btn--secondary" data-bind="bestsellers.cta">Discover all our products</a></div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="section container">
+    <h2 class="section-heading" data-bind="categories.title">Shop by category</h2>
+    <div class="home-categories" data-categories></div>
+  </section>
+
+  <!-- NEWSLETTER CTA -->
+  <section class="section container">
+    <div class="home-newsletter">
+      <div class="home-newsletter__copy">
+        <h2 class="home-newsletter__title" data-bind="newsletter.title">Join the inner circle.</h2>
+        <p class="home-newsletter__desc" data-bind="newsletter.desc"></p>
+        <form class="home-newsletter__form" onsubmit="event.preventDefault()">
+          <input class="input" type="email" placeholder="Sign up for our monthly newsletter" />
+          <button class="btn btn--primary" aria-label="Subscribe">→</button>
+        </form>
+        <p class="home-newsletter__fineprint" data-bind="newsletter.fineprint"></p>
+      </div>
+      <div class="home-newsletter__media"><img data-img="newsletter" alt="" /></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="section--tight container">
+    <figure class="home-testimonial">
+      <img class="home-testimonial__avatar" data-img="testimonialAvatar" alt="" />
+      <div>
+        <blockquote class="home-testimonial__quote" data-bind="testimonial.quote"></blockquote>
+        <figcaption class="home-testimonial__cite" data-bind="testimonial.cite"></figcaption>
+      </div>
+    </figure>
+  </section>
+
+  <!-- VIDEO HIGHLIGHT -->
+  <section class="section container">
+    <div class="home-highlight">
+      <div class="home-highlight__media"><img data-img="highlight" alt="" /></div>
+      <div class="home-highlight__body">
+        <h2 class="home-highlight__title" data-bind="highlight.title"></h2>
+        <p class="home-highlight__sub" data-bind="highlight.sub"></p>
+        <div class="home-highlight__stats" data-highlight-stats></div>
+        <p class="home-highlight__desc" data-bind="highlight.desc"></p>
+        <div><a href="#" class="btn btn--primary btn--knockout" data-bind="highlight.cta">Explore our collection</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LATEST STORIES -->
+  <section class="section container">
+    <h2 class="section-heading" data-bind="stories.title">Latest stories</h2>
+    <div class="home-stories" data-stories></div>
+  </section>
+
+  <!-- USPs -->
+  <section class="home-usps">
+    <div class="home-usps__inner" data-usps></div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section container">
+    <h2 class="section-heading" data-bind="reviews.title">Hear it from our customers</h2>
+    <div class="home-reviews" data-reviews></div>
+    <div class="center-cta"><a href="#" class="btn btn--secondary" data-bind="reviews.cta">Show all reviews</a></div>
+  </section>
+
+  <!-- IMAGE CTA -->
+  <section class="section container">
+    <div class="home-imagecta">
+      <img class="home-imagecta__bg" data-img="imageCta" alt="" />
+      <div class="home-imagecta__inner">
+        <h2 class="home-imagecta__title" data-bind="imageCta.title"></h2>
+        <p class="home-imagecta__desc" data-bind="imageCta.desc"></p>
+        <a href="#" class="btn btn--knockout" data-bind="imageCta.cta">Learn more</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="home-footer">
+    <div class="home-footer__cols">
+      <div class="home-footer__col">
+        <div class="home-footer__brand" data-bind="brandName">PHPure</div>
+        <p class="home-footer__tagline" data-bind="footer.tagline"></p>
+      </div>
+      <div class="home-footer__col"><h4>Customer service</h4><ul><li><a href="#">Orders</a></li><li><a href="#">Returns</a></li><li><a href="#">My account</a></li><li><a href="#">Payments</a></li><li><a href="#">Contact</a></li></ul></div>
+      <div class="home-footer__col"><h4>Our company</h4><ul><li><a href="#">About us</a></li><li><a href="#">Blog</a></li><li><a href="#">Our stores</a></li><li><a href="#">Sustainability</a></li></ul></div>
+      <div class="home-footer__col"><h4>My account</h4><ul><li><a href="#">My account</a></li><li><a href="#">My orders</a></li><li><a href="#">Wishlist</a></li></ul></div>
+    </div>
+    <div class="home-footer__legal"><span data-bind="footer.copyright">© 2025 PHPure</span><span>Terms &amp; conditions · Privacy policy</span></div>
+  </footer>
+
+  <script>
+  // Image fallback so no broken-image icons appear in the demo.
+  function img(id, w) { return `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w||800}&q=70`; }
+  function bindImgFallback() {
+    document.querySelectorAll('img[data-img]').forEach(el => {
+      el.onerror = () => { if (!el.dataset.fbk) { el.dataset.fbk = '1'; el.src = `https://picsum.photos/seed/${el.dataset.img}${document.body.dataset.brand}/800/900`; } };
+    });
+  }
+
+  const USPS = [
+    { title: 'Safe and secure', desc: 'Buy with confidence knowing your orders are safe and secure with our advanced security measures.' },
+    { title: 'Free shipping', desc: 'Enjoy the convenience of free shipping on all orders, making it even easier to get your favourites.' },
+    { title: 'Amazing gift-wrapping', desc: 'Elevate your gifting experience with our gift-wrapping service, adding elegance to every present.' },
+  ];
+
+  const DATA = {
+    golf: {
+      brandName: 'PHPure Golf',
+      nav: ['New arrivals', 'Women', 'Men', 'Gear', 'Training', 'Sale'],
+      hero: { title: 'The passion. The lifestyle', cta: 'Discover our new products' },
+      heroLeft: img('1535131749006-b7f58c99034b', 1200),
+      heroRight: img('1593111774240-d529f12cf4bb', 1200),
+      bestsellers: { title: 'Our bestsellers', cta: 'Discover all our products' },
+      products: [
+        { brand: 'Druids', name: 'Flyknit Racer', price: '€99.99', tag: 'New', img: img('1535132011086-b8818f016104', 600) },
+        { brand: 'Druids', name: 'Flyknit Racer', price: '€99.99', tag: 'New', img: img('1593111774240-d529f12cf4bb', 600) },
+        { brand: 'Druids', name: 'Flyknit Racer', price: '€99.99', tag: 'New', img: img('1587174486073-ae5e5cff23aa', 600) },
+        { brand: 'Druids', name: 'Flyknit Racer', price: '€99.99', tag: 'New', img: img('1592919505780-303950717480', 600) },
+      ],
+      categories: {
+        title: 'Shop by category',
+        items: [
+          { label: 'Clubs', img: img('1535132011086-b8818f016104', 900) },
+          { label: 'Golfbags', img: img('1593111774240-d529f12cf4bb', 900) },
+          { label: 'Gloves', img: img('1587174486073-ae5e5cff23aa', 900) },
+          { label: "Polo's", img: img('1592919505780-303950717480', 900) },
+        ],
+      },
+      newsletter: { title: 'Join the inner circle.', desc: 'Be part of the PHPure Golf Community and unlock exclusive benefits.', fineprint: 'When you sign up for our emails you will receive marketing and learn more about us in our privacy policy.' },
+      newsletter_img: img('1535131749006-b7f58c99034b', 1200),
+      testimonial: { quote: 'This online sportswear store exceeded all my expectations with their exceptional quality, extensive variety, impeccable customer service, and seamless shopping experience.', cite: 'Louis Peterson · Awesome Company' },
+      testimonialAvatar: img('1544005313-94ddf0286df2', 200),
+      highlight: {
+        title: 'FutureFit33', sub: '33 Unique Loft & Lie Settings.',
+        desc: 'FutureFit33™ offers more adjustability than ever before. Dial-in your launch, speed, and control today.',
+        cta: 'Explore our collection',
+        stats: [ { v: '900 XX', l: 'Lorem Ipsum' }, { v: '20 XX', l: 'Lorem Ipsum' }, { v: '4.0', l: 'Lorem Ipsum' } ],
+      },
+      highlight_img: img('1535132011086-b8818f016104', 1000),
+      stories: {
+        title: 'Latest stories', cta: 'Read more',
+        items: [
+          { tag: 'Innovation', title: 'Hit the court in style.', img: img('1535131749006-b7f58c99034b', 800) },
+          { tag: 'Events', title: 'PHPure events you should join in Spring', img: img('1593111774240-d529f12cf4bb', 700) },
+          { tag: 'Innovation', title: 'Golf trends 2025', img: img('1592919505780-303950717480', 700) },
+        ],
+      },
+      reviews: {
+        title: 'Hear it from our customers', cta: 'Show all reviews',
+        items: [
+          { title: 'I win everything since I have my club.', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras placerat nisl nec justo sollicitudin, et euismod nibh aliquet.', meta: 'Review by John · 16/12/2025' },
+          { title: 'I win everything since I have my club.', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras placerat nisl nec justo sollicitudin, et euismod nibh aliquet.', meta: 'Review by John · 16/12/2025' },
+        ],
+      },
+      imageCta: { title: 'PHPure Golf', desc: 'We bring you premium gear and apparel for golfers who value precision and performance. Since 1984.', cta: 'Learn more' },
+      imageCta_img: img('1592919505780-303950717480', 1600),
+      footer: { tagline: 'Premium gear and apparel for golfers who value precision and performance.', copyright: '© 2025 PHPure Golf' },
+    },
+
+    'mini-golf': {
+      brandName: 'Mini Golf',
+      nav: ['New arrivals', 'Girls', 'Boys', 'Baby', 'Accessories', 'Sale'],
+      hero: { title: 'LITTLE LOOKS, BIG ADVENTURES', cta: 'Discover our new products' },
+      heroLeft: img('1503454537195-1dcabb73ffb9', 1200),
+      heroRight: img('1471286174890-9c112ffca5b4', 1200),
+      bestsellers: { title: 'THE PIECES EVERYONE LOVES', cta: 'Discover all our products' },
+      products: [
+        { brand: 'Mini Golf', name: 'Sunshine Cardigan', price: '€56,99', tag: 'New', img: img('1518831959646-742c3a14ebf7', 600) },
+        { brand: 'Mini Golf', name: 'Sunshine Cardigan', price: '€56,99', tag: 'New', img: img('1490725263030-1f0521cec8ec', 600) },
+        { brand: 'Mini Golf', name: 'Sunshine Cardigan', price: '€56,99', tag: 'New', img: img('1555009393-f20bdb245c4d', 600) },
+        { brand: 'Mini Golf', name: 'Sunshine Cardigan', price: '€56,99', tag: 'New', img: img('1503454537195-1dcabb73ffb9', 600) },
+      ],
+      categories: {
+        title: 'SHOP BY CATEGORY',
+        items: [
+          { label: 'Girls', img: img('1518831959646-742c3a14ebf7', 900) },
+          { label: 'Boys', img: img('1471286174890-9c112ffca5b4', 900) },
+          { label: 'Baby', img: img('1490725263030-1f0521cec8ec', 900) },
+          { label: 'Accessories', img: img('1555009393-f20bdb245c4d', 900) },
+        ],
+      },
+      newsletter: { title: 'JOIN THE MINI CLUB', desc: 'Be the first to discover new drops, playful collections and little surprises.', fineprint: 'When you sign up for our emails you will receive marketing and learn more about us in our privacy policy.' },
+      newsletter_img: img('1471286174890-9c112ffca5b4', 1200),
+      testimonial: { quote: 'Mini Golf creates soft, easy-to-wear pieces for babies and kids. Designed for movement, comfort and everyday adventures, with gentle colours and playful details.', cite: 'Laura Peterson · Awesome Company' },
+      testimonialAvatar: img('1544005313-94ddf0286df2', 200),
+      highlight: {
+        title: 'IM NOT GOING OUT CLUB', sub: 'Cozy styles for indoor adventures.',
+        desc: "Loungewear designed for little ones who'd rather stay in. Soft cottons, playful prints, made for slow mornings and pillow forts.",
+        cta: 'Explore our collection',
+        stats: [ { v: '100%', l: 'Organic cotton' }, { v: 'GOTS', l: 'Certified' }, { v: 'Made', l: 'In Europe' } ],
+      },
+      highlight_img: img('1503454537195-1dcabb73ffb9', 1000),
+      stories: {
+        title: 'TINY TALES', cta: 'Read more',
+        items: [
+          { tag: 'Lookbook', title: 'Little outfits for sunny days.', img: img('1518831959646-742c3a14ebf7', 800) },
+          { tag: 'Tips', title: 'Choose the right size for growing kids.', img: img('1490725263030-1f0521cec8ec', 700) },
+          { tag: 'Behind the scenes', title: 'Behind our SS26 collection.', img: img('1471286174890-9c112ffca5b4', 700) },
+        ],
+      },
+      reviews: {
+        title: 'LOVED BY FAMILIES', cta: 'Show all reviews',
+        items: [
+          { title: 'So soft and easy to wear.', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras placerat nisl nec justo sollicitudin, et euismod nibh aliquet.', meta: 'Review by Emma · 16/12/2025' },
+          { title: 'So soft and easy to wear.', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras placerat nisl nec justo sollicitudin, et euismod nibh aliquet.', meta: 'Review by Emma · 16/12/2025' },
+        ],
+      },
+      imageCta: { title: 'MINI GOLF', desc: 'Playful clothing for little explorers. Mini Golf creates soft, easy-to-wear pieces for babies and kids.', cta: 'Learn more' },
+      imageCta_img: img('1471286174890-9c112ffca5b4', 1600),
+      footer: { tagline: 'Premium kids gear made for tiny adventures.', copyright: '© 2026 Mini Golf' },
+    },
+  };
+
+  const CART_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h2l3 13h12l2-9H6"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>';
+  const HEART_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>';
+  const SHIELD = '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/></svg>';
+  const TRUCK = '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h13l5 5v5h-3"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>';
+  const GIFT = '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M3 12h18M12 8v13M12 8S9 3 6.5 5 8 8 12 8zM12 8s3-5 5.5-3S16 8 12 8z"/></svg>';
+  const USP_ICONS = [SHIELD, TRUCK, GIFT];
+
+  function get(obj, path) { return path.split('.').reduce((o, k) => (o || {})[k], obj); }
+
+  function render(brand) {
+    const d = DATA[brand];
+
+    // text binds
+    document.querySelectorAll('[data-bind]').forEach(el => {
+      const v = get(d, el.dataset.bind);
+      if (v != null) el.textContent = v;
+    });
+
+    // image binds (some keys carry a suffix _img on the data object)
+    const imgMap = { heroLeft: d.heroLeft, heroRight: d.heroRight, newsletter: d.newsletter_img, testimonialAvatar: d.testimonialAvatar, highlight: d.highlight_img, imageCta: d.imageCta_img };
+    document.querySelectorAll('img[data-img]').forEach(el => { const v = imgMap[el.dataset.img]; if (v) el.src = v; });
+
+    // nav
+    const nav = document.querySelector('[data-nav]');
+    nav.innerHTML = d.nav.map((n, i) => `<a href="#"${i === 1 ? ' style="color:var(--color-text-brand)"' : ''}>${n}</a>`).join('');
+
+    // products
+    document.querySelector('[data-products]').innerHTML = d.products.map(p => `
+      <article class="product-card">
+        <span class="product-card__tag">${p.tag}</span>
+        <div class="product-card__media-wrap"><img class="product-card__media" src="${p.img}" alt="" onerror="this.src='https://picsum.photos/seed/${encodeURIComponent(p.name + brand)}/600/700'"/></div>
+        <span class="product-card__brand">${p.brand}</span>
+        <h3 class="product-card__title">${p.name}</h3>
+        <span class="product-card__price">${p.price}</span>
+        <div class="product-card__actions">
+          <button class="btn btn--primary product-card__cart">${CART_SVG} Add to cart</button>
+          <button class="product-card__wishlist" aria-label="Add to wishlist">${HEART_SVG}</button>
+        </div>
+      </article>`).join('');
+
+    // categories
+    document.querySelector('[data-categories]').innerHTML = d.categories.items.map(c => `
+      <a href="#" class="home-cat"><img src="${c.img}" alt="" onerror="this.src='https://picsum.photos/seed/${encodeURIComponent(c.label + brand)}/900/600'"/><span class="home-cat__label">${c.label}</span></a>`).join('');
+
+    // highlight stats
+    document.querySelector('[data-highlight-stats]').innerHTML = d.highlight.stats.map(s => `
+      <div><div class="home-highlight__stat-value">${s.v}</div><div class="home-highlight__stat-label">${s.l}</div></div>`).join('');
+
+    // stories
+    document.querySelector('[data-stories]').innerHTML = d.stories.items.map((s, i) => `
+      <a href="#" class="story-card${i === 0 ? ' story-card--feature' : ''}">
+        <img class="story-card__img" src="${s.img}" alt="" onerror="this.src='https://picsum.photos/seed/${encodeURIComponent(s.title + brand)}/600/750'"/>
+        <span class="story-card__tag">${s.tag}</span>
+        <h3 class="story-card__title">${s.title}</h3>
+        <span class="btn btn--tertiary" style="align-self:flex-start;padding:8px 0;border:0;background:transparent">${d.stories.cta} →</span>
+      </a>`).join('');
+
+    // usps
+    document.querySelector('[data-usps]').innerHTML = USPS.map((u, i) => `
+      <div class="usp-item"><div class="usp-item__icon">${USP_ICONS[i]}</div><div><p class="usp-item__title">${u.title}</p><p class="usp-item__desc">${u.desc}</p></div></div>`).join('');
+
+    // reviews
+    document.querySelector('[data-reviews]').innerHTML = d.reviews.items.map(r => `
+      <article class="review-card">
+        <span class="review-card__stars" aria-label="5 out of 5">★★★★★</span>
+        <h3 class="review-card__title">${r.title}</h3>
+        <p class="review-card__body">${r.body}</p>
+        <span class="review-card__meta">${r.meta}</span>
+      </article>`).join('');
+
+    bindImgFallback();
+  }
+
+  // brand toggle
+  document.querySelectorAll('[data-brand-toggle]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const brand = btn.dataset.brandToggle;
+      document.body.dataset.brand = brand;
+      document.querySelectorAll('[data-brand-toggle]').forEach(b => b.setAttribute('aria-pressed', b === btn));
+      render(brand);
+    });
+  });
+
+  render('golf');
+  </script>
+</body>
+</html>

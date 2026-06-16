@@ -188,21 +188,27 @@
 .product-card:hover { background: var(--card-background-hover); }
 .product-card:focus-within { outline: 2px solid var(--card-border-focus); outline-offset: 2px; }
 
+/* Custom flag tag — square top corners, rounded bottom (golf); pill (mini-golf).
+   Flush to the card's top-right corner; the card's overflow:hidden + radius clips it. */
 .product-card__tag {
   position: absolute;
-  top: calc(var(--card-padding-vertical, 16px) + 8px);
-  right: calc(var(--card-padding-horizontal, 16px) + 8px);
+  top: 0;
+  right: 0;
   z-index: 2;
   display: inline-flex;
   align-items: center;
-  padding: 6px 14px;
-  background: var(--color-background-brand-subtle);
+  padding: 8px 16px;
+  background: var(--color-background-brand-strong);
   color: var(--color-text-default);
   font-family: var(--font-family-body);
   font-size: var(--font-size-meta-sm, 12px);
   font-weight: var(--font-weight-label);
   line-height: 1;
-  border-radius: var(--radius-pill);
+  border-radius:
+    var(--card-tags-radius-top, 0px)
+    var(--card-tags-radius-top, 0px)
+    var(--card-tags-radius-bottom, 16px)
+    var(--card-tags-radius-bottom, 16px);
 }
 .product-card__tag--knockout {
   background: var(--color-background-brand-knockout);
